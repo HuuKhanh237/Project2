@@ -11,3 +11,6 @@ Route::get('login', function(){
     return view('technicians.login');
     
 });
+Route::get('admin/home',function(){
+    return view('admin.home');
+});
