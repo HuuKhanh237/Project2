@@ -869,7 +869,7 @@
     </div>
     <!-- /.content-header -->
 
-    
+    <img src="/storage/smiley.jpg">
   
     <!-- /.content -->
   </div>
