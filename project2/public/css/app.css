@@ -9,3 +9,8 @@ tr{
 th{
     border-right:2px solid white;
 }
+*{
+padding: 0;
+margin: 0;
+box-sizing: border-box
+}

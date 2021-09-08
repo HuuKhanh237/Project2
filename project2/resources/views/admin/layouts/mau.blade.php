@@ -9,21 +9,28 @@
   <title>@yield('title')</title>
   <link rel="stylesheet" href="css/app.css">
   <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/v/bs5/jszip-2.5.0/dt-1.11.0/af-2.3.7/b-2.0.0/b-colvis-2.0.0/b-html5-2.0.0/b-print-2.0.0/datatables.min.css" />
-
-
+  <style type="text/css">
+    *{
+			padding: 0;
+			margin: 0;
+			box-sizing: border-box;
+		}
+	  body{
+      width: 100%;
+      background: url("storage/kk.jpg");
+      color: white;
+    }
+    .container{
+		  width: 1240px;
+			
+			background-color: #FDFCFD;
+			
+		}
+  </style>
 </head>
-
 <body>
-  <div style="float: right ; padding-right: 5px;" class="kaak">
-    @section('tren')
-    @if(Auth::guard('admin')->user() != null)
-    <h3>{{Auth::guard('admin')->user()->name}}</h3>
-    <a href="{{route('logout')}}"><button type="button" class="btn btn-outline-dark" style="float: right">Logout</button></a>
-    @endif
-    @show
-  </div>
-  <br><br><br><br>
-  <div class="container" id="wrap" style="width: 100%;">
+  <div class="container" id="wrap">
+  <img src="storage/ll6.gif" style="width: 1240px;" />
     @section('header')
     <header>
       <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
@@ -65,9 +72,16 @@
         </div>
       </nav>
     </header>
-
+    <div style="float: right ; padding-right: 5px;" class="kaka">
+    @section('tren')
+    @if(Auth::guard('admin')->user() != null)
+    <h3>{{Auth::guard('admin')->user()->name}}</h3>
+    <a href="{{route('logout')}}"><button type="button" class="btn btn-outline-dark" style="float: right">Logout</button></a>
+    @endif
     @show
-    <div class="container">
+  </div>
+    @show
+    <div class="con">
       @yield('slider')
     </div>
     <div class="content">
@@ -79,6 +93,7 @@
     </footer>
     @show
   </div>
+ 
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
   <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.36/pdfmake.min.js"></script>
   <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.36/vfs_fonts.js"></script>

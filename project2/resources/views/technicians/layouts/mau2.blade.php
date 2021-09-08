@@ -12,20 +12,28 @@
     <link rel="stylesheet" href="../../plugins/fontawesome-free/css/all.min.css">
     <!-- Theme style -->
     <link rel="stylesheet" href="../../dist/css/adminlte.min.css">
+    <style type="text/css">
+body{
+      width: 100%;
+      background: url("storage/kaka1.jpg");
+      color: white;
+    }
+</style>
 </head>
 
-<body class="hold-transition sidebar-mini layout-boxed" style="margin: auto;">
+<body >
     <!-- Site wrapper -->
     
-    <div class="wrapper">
+    <div><img src="storage/ll6.gif" /></div>
+    <div class="wrapper" style="width: 100%;">
         <!-- Navbar -->
         
     
         <nav class="main-header navbar navbar-expand navbar-white navbar-light">
             <!-- Left navbar links -->
-            <div name="header" ><img src="storage/ll6.gif" />
+            <div name="header" >
             
-            <ul class="navbar-nav" style="padding-top: 10px;">
+            <ul class="navbar-nav" >
                 <li class="nav-item">
                     <a class="nav-link" data-widget="pushmenu" href="#" role="button"><i class="fas fa-bars"></i></a>
                 </li>
@@ -38,7 +46,7 @@
             </ul>
 
             <!-- Right navbar links -->
-            <ul class="navbar-nav ml-auto">
+            <ul class="navbar-nav" style="float : left">
                 <!-- Navbar Search -->
                 <li class="nav-item">
                     <a class="nav-link" data-widget="navbar-search" href="#" role="button">
@@ -81,10 +89,10 @@
         <!-- Main Sidebar Container -->
         <aside class="main-sidebar sidebar-dark-primary elevation-4">
             <!-- Brand Logo -->
-            <a href="../../index3.html" class="brand-link">
+            <!-- <a href="../../index3.html" class="brand-link">
                 <img src="../../dist/img/AdminLTELogo.png" alt="AdminLTE Logo" class="brand-image img-circle elevation-3" style="opacity: .8">
                 <span class="brand-text font-weight-light">BKAMED</span>
-            </a>
+            </a> -->
 
             <!-- Sidebar -->
             <div class="sidebar">
@@ -125,7 +133,7 @@
                             <a href="#" class="nav-link">
                                 <i class="nav-icon fas fa-tachometer-alt"></i>
                                 <p>
-                                    Dashboard
+                                    Phòng Lab
                                     <i class="right fas fa-angle-left"></i>
                                 </p>
                             </a>
@@ -133,27 +141,53 @@
                                 <li class="nav-item">
                                     <a href="../../index.html" class="nav-link">
                                         <i class="far fa-circle nav-icon"></i>
-                                        <p>Dashboard v1</p>
+                                        <p>P201</p>
                                     </a>
                                 </li>
                                 <li class="nav-item">
                                     <a href="../../index2.html" class="nav-link">
                                         <i class="far fa-circle nav-icon"></i>
-                                        <p>Dashboard v2</p>
+                                        <p>P202</p>
                                     </a>
                                 </li>
                                 <li class="nav-item">
                                     <a href="../../index3.html" class="nav-link">
                                         <i class="far fa-circle nav-icon"></i>
-                                        <p>Dashboard v3</p>
+                                        <p>P203</p>
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="../../index3.html" class="nav-link">
+                                        <i class="far fa-circle nav-icon"></i>
+                                        <p>P204</p>
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="../../index3.html" class="nav-link">
+                                        <i class="far fa-circle nav-icon"></i>
+                                        <p>P205</p>
                                     </a>
                                 </li>
                             </ul>
-                        </li>
+</li>
+<li class="nav-item">
+            <a href="../widgets.html" class="nav-link">
+              <i class="nav-icon fas fa-th"></i>
+              <p>
+                Kho
+               
+              </p>
+            </a>
+          </li>
+</ul>
+                           
 
 
 
                 </nav>
+                <div style=" padding-right: 5px;">
+                <a href="{{route('logout')}}"><button type="button" class="btn btn-outline-danger" style="float: right"><i class="fas fa-sign-out-alt" style="font-size: 30px;"></i></button></a>
+                </div>
                 <!-- /.sidebar-menu -->
             </div>
             <!-- /.sidebar -->
