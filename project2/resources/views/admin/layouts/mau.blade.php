@@ -12,18 +12,7 @@
   <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
 
 </head>
-
 <body>
-  
-  
-  <div style="float: right ; padding-right: 5px; margin-top:30px;" class="kaak">
-    @section('tren')
-    @if(Auth::guard('admin')->user() != null)
-    <h3>{{Auth::guard('admin')->user()->name}}</h3>
-    
-    @endif
-    @show
-  </div>
   {{-- menu --}}
   <div class="sidebar close">
     <div class="logo-details">
@@ -33,13 +22,19 @@
     <ul class="nav-links">
       <li>
         <a href="#">
-          <i class='bx bx-grid-alt' ></i>
-          <span class="link_name">Dashboard</span>
+          <i class='bx bx-happy'></i>
+            <span class="link_name">
+            @section('tren')
+            @if(Auth::guard('admin')->user() != null)
+            {{Auth::guard('admin')->user()->name}}
+            @endif
+            @show
+            </span>
         </a>
         <ul class="sub-menu blank">
           <li><a class="link_name" href="#">Category</a></li>
-        </ul>
-      </li>
+        </ul> 
+      
       <li>
         <div class="iocn-link">
           <a href="#">
@@ -70,7 +65,7 @@
           <li><a href="#">Card Design</a></li>
         </ul>
       </li>
-      <li>
+      {{-- <li>
         <a href="#">
           <i class='bx bx-pie-chart-alt-2' ></i>
           <span class="link_name">Analytics</span>
@@ -129,7 +124,7 @@
         <ul class="sub-menu blank">
           <li><a class="link_name" href="#">Setting</a></li>
         </ul>
-      </li>
+      </li> --}}
       <li>
         <a href="{{route('logout')}}">
           <i class='bx bx-log-out' ></i>
@@ -145,8 +140,18 @@
   <section class="home-section">
     <div class="home-content">
       <i class='bx bx-menu' ></i>
+       <img style="margin-top: 50px;" src="/storage/ll6.gif" alt="">
+      </div>
+      <br/> <br/> <br/>
+        @show
+        <div class="con">
+          @yield('slider')
+        </div>
+        <div class="content">
+          @yield('content')
+        </div>
       
-    </div>
+    
   </section>
   <script>
   let arrow = document.querySelectorAll(".arrow");
@@ -169,20 +174,14 @@
     <header>
       
     </header>
-
-    @show
-    <div class="container">
-      @yield('slider')
-    </div>
-    <div class="content">
-      @yield('content')
-    </div>
+   
     @section('footer')
     <footer class="container" style="position: absolute;bottom:0">
       
     </footer>
     @show
   </div>
+ 
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
   <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.36/pdfmake.min.js"></script>
   <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.36/vfs_fonts.js"></script>

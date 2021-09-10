@@ -97,7 +97,7 @@ th{
   align-items: center;
   text-decoration: none;
 }
-.sidebar .nav-links li a .link_name{
+.sidebar .nav-links li a .link_name {
   font-size: 18px;
   font-weight: 400;
   color: #fff;
@@ -213,10 +213,9 @@ th{
   font-size: 12px;
 }
 .home-section{
-  background-image: "/storage/ll6.gif";
   position: relative;
-  background:#fff;
-  height: 70px;
+  background: #E4E9F7;
+  height: 100vh;
   left: 260px;
   width: calc(100% - 260px);
   transition: all 0.5s ease;
@@ -248,6 +247,11 @@ th{
     display: none;
   }
 }
-.content{
-  margin: auto;
+.name{
+  margin-left:1600px;
+  width: 100%;
+}
+.h3{
+  font-size: 18px;
+  font-weight: 400;
 }
