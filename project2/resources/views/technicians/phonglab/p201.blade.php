@@ -11,6 +11,7 @@
         <th>Name</th>
         <th>Mô tả</th>
         <th>Lab</th>
+        <th>Tình Trạng</th>
     </tr>
 </thead>
 <tbody>
@@ -20,6 +21,7 @@
         <td>{{ $item->name}}</td>
         <td>{{ $item->mota}}</td>
         <td>{{ $item->id_lab}}</td>
+        <td>{{ $item->tinhtrang1==1? 'hiển thị tình trạng 1':'hiển thị tình trạng 2'}}</td>
     </tr>
     @empty
     <tr class="table-dark">
