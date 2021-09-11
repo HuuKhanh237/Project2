@@ -21,10 +21,28 @@ class DatabaseSeeder extends Seeder
         // 'email'=>"vuongkhanh40@gmail.com",
         // 'password'=>bcrypt('admin')
         // ]);
+
     //     Admin::create([
     //         'name'=>"Vương Hữu Khánh",
     //         'email'=>"vuongkhanh40@gmail.com",
     //         'password'=>bcrypt('admin')
     //         ]);
+
+//         Admin::create([
+//             'name'=>"Hoàng Tuấn Anh",
+//             'email'=>"vuongkhanh2307@gmail.com",
+//             'password'=>bcrypt('admin')
+//             ]);
+//         User::create([
+//             'name'=>"Hoàng Tuấn Anh",
+//             'email'=>"hta1@gmail.com",
+//             'password'=>bcrypt('admin')
+//             ]);
+//         Admin::create([
+//             'name'=>"VHK",
+//             'email'=>"hta2@gmail.com",
+//             'password'=>bcrypt('123')
+//             ]);
+// >>>>>>> bf79cd0dfc813d34f4c15a8a7b97bf8ed8d5ab82
     }
 }
