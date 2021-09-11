@@ -14,15 +14,20 @@ class LoginController extends Controller
     function login(Request $request){
            $email = $request -> input('email');
            $password = $request -> input('password');
-           if(Auth::attempt(['email' => $email, 'password' => $password])){
+           if(Auth::attempt(['email' => $email, 'password' => $password , 'is_active'=> 1])){
                return redirect()->route('home');
+              
            }
            else{
-               return redirect()->back()->with('error','Thông tin đăng nhập không chính xác');
+               return redirect()->back()->with('error','Thông tin đăng nhập không chính xác hoặc tài khoản không còn tồn tại');
            }
+           
+           
+           
     }
     function logout(){
         Auth::logout();
         return redirect()->route('home');
     }
+   
 }

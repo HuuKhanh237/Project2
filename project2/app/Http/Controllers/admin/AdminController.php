@@ -4,7 +4,7 @@ namespace App\Http\Controllers\admin;
 
 use App\Http\Controllers\Controller;
 use App\Models\Admin;
-
+use App\Models\User;
 use Illuminate\Http\Request;
 
 class AdminController extends Controller
@@ -15,9 +15,22 @@ class AdminController extends Controller
     }
     function home(){
         
-        $thietbi = Admin::home();
-        return view('admin.home',['thietbi'=>$thietbi]);
+        $users = Admin::home();
+        return view('admin.home',['users'=>$users]);
     }
+    function thietbi(){
+        
+        $thietbi = Admin::thietbi();
+        return view('admin.thietbi',['thietbi'=>$thietbi]);
+    }
+    function linhkien(){
+        
+        $linhkien = Admin::linhkien();
+        return view('admin.kho',['linhkien'=>$linhkien]);
+    }
+  
+
     
+   
    
 }

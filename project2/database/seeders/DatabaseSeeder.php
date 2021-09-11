@@ -22,8 +22,8 @@ class DatabaseSeeder extends Seeder
         // 'password'=>bcrypt('admin')
         // ]);
         Admin::create([
-            'name'=>"Hoàng Tuấn Anh",
-            'email'=>"vuongkhanh2307@gmail.com",
+            'name'=>"Vương Hữu Khánh",
+            'email'=>"vuongkhanh40@gmail.com",
             'password'=>bcrypt('admin')
             ]);
     }

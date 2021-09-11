@@ -159,6 +159,7 @@ label {
                   @if(Session::has('error'))
                 <h3 style="color: red; text-align: center;">{{Session::get('error')}}</h3>
                 @endif
+                
                 </div>
 
                 <div class="col-lg-12 login-form">
