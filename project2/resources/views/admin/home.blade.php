@@ -25,6 +25,7 @@
             <td>{{ $item->name}}</td>
             <td>{{ $item->email}}</td>
             <td>{{ $item->is_active==1?'Hoạt động' : 'Khóa' }}</td>
+            <td><a href="{{url('/admin/sua/'.$item->id)}}">Sửa</a></td>
             
            
         </tr>

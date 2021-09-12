@@ -1,8 +1,8 @@
 @extends('technicians.layouts.mau')
-@section('title','Phòng 201')
+@section('title','Phòng 204')
 @section('content')
-   <h1 style="text-align: center;">Phòng 201</h1>
-   <table id="home" class="table table-bordered" style="text-align: center;">
+   <h1 style="text-align: center;">Phòng 204</h1>
+   <table id="home" class="table table-bordered" style="text-align: center;"> 
 
 <thead>
     
@@ -15,9 +15,9 @@
     </tr>
 </thead>
 <tbody>
-    @forelse ($P201 as $item)
+    @forelse ($P204 as $item)
     <tr>
-        
+       
         <td>{{ $item->name}}</td>
         <td>{{ $item->tinhtrang1==1?'Tốt':'Hỏng'}}</td>
         <td>{{ $item->mota}}</td>

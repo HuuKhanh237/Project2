@@ -6,25 +6,32 @@
 @section('title','Thêm thiết bị')
 @section('content')
 
-<h1 style="text-align: center;">Thêm thiết bị phòng Lab</h1>
-<div class="container">
+<h1 style="text-align: center;">Thêm linh kiện trong kho</h1>
+<div class="container" style="width: 600px; padding-top: 30px;">
 
     <form method="POST" enctype="multipart/form-data">
         @csrf
+        <div>@if(Session('success'))<div class="alert alert-success">{{Session::get('success')}}</div>@endif</div>
         <div class="input-group mb-3">
-            <span class="input-group-text" id="basic-addon1">@</span>
-            <input type="text" class="form-control" placeholder="Username" aria-label="Username" aria-describedby="basic-addon1">
+            
+            <input style=" border-radius: 10px; width: 600px;  height: 50px;" type="text" name="name" placeholder="Nhập tên linh kiện" required>
         </div>
         <div class="form-floating">
-            <textarea class="form-control" placeholder="Leave a comment here" id="floatingTextarea2" style="height: 100px"></textarea>
-            <label for="floatingTextarea2">Comments</label>
-        </div>
-        
-        <button type="button" class="btn btn-outline-dark">Dark</button>
+            <textarea name="mota" class="form-control" placeholder="Leave a comment here" id="floatingTextarea2" style="border-radius: 10px;height: 150px" required></textarea>
+            <label for="floatingTextarea2">Chi tiết</label>
+        </div><br>
         <div class="input-group mb-3">
-            <span class="input-group-text" id="basic-addon1">@</span>
-            <input type="text" class="form-control" placeholder="Username" aria-label="Username" aria-describedby="basic-addon1">
+            <input style=" border-radius: 10px;  height: 50px;" type="number" name="soluong" placeholder="Nhập số lượng" required>
         </div>
+        <select name="id_kho" class="form-select" aria-label="Default select example" required>
+            <option selected>Kho</option>
+            @foreach($kho as $item)
+            <option value="{{$item->id}}">{{$item->name}}</option>
+            @endforeach
+           
+        </select><br>
+        <button type="submit" class="btn btn-outline-dark" style="width: 300px; margin-left: 150px;">Thêm</button>
+        
     </form>
 </div>
 

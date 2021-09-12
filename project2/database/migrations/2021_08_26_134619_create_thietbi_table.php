@@ -17,8 +17,8 @@ class CreateThietbiTable extends Migration
         Schema::create('thietbi', function (Blueprint $table) {
             $table->id();
             $table->string('name',50);
-            $table->tinyInteger('tinhtrang1');
-            $table->string('tinhtrang2',500);
+            $table->tinyInteger('tinhtrang1')->default(1);
+            $table->string('tinhtrang2',500)->default('NULL');
             $table->string('mota',550);
             $table->bigInteger('id_lab')->unsigned();
             $table->foreign('id_lab')

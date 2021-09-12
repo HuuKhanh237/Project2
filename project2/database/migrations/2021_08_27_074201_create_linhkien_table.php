@@ -16,7 +16,7 @@ class CreateLinhkienTable extends Migration
         Schema::create('linhkien', function (Blueprint $table) {
             $table->id();
             $table->string('name',50);
-            $table->tinyInteger('tinhtrang1');
+            $table->tinyInteger('tinhtrang1')->default(1);
             $table->string('mota',550);
             $table->float('soluong', 8, 2);
             $table->bigInteger('id_kho')->unsigned();

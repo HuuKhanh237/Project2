@@ -7,21 +7,32 @@
 
     <form method="POST" enctype="multipart/form-data">
         @csrf
+        <div>@if(Session('success'))<div class="alert alert-success">{{Session::get('success')}}</div>@endif</div>
         <div class="input-group mb-3">
-            <span class="input-group-text" id="basic-addon1">@</span>
-            <input type="text" class="form-control" placeholder="Username" aria-label="Username" aria-describedby="basic-addon1">
+
+            <input style=" border-radius: 10px; width: 600px;  height: 50px;" type="text" name="name" placeholder="Nhập mã thiết bị" required>
         </div>
+        <!-- <div class="form-check">
+            <input name="tinhtrang1" value = "1"class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
+            <label class="form-check-label" for="flexRadioDefault1">
+                Tôt 
+            </label>
+        </div> -->
         <div class="form-floating">
-            <textarea class="form-control" placeholder="Leave a comment here" id="floatingTextarea2" style="height: 100px"></textarea>
-            <label for="floatingTextarea2">Comments</label>
-        </div>
-        <select class="form-select" aria-label="Default select example">
-            <option selected>Open this select menu</option>
-            <option value="1">One</option>
-            <option value="2">Two</option>
-            <option value="3">Three</option>
-        </select>
-        <button type="button" class="btn btn-outline-dark">Dark</button>
+            <textarea name="mota" class="form-control" placeholder="Leave a comment here" id="floatingTextarea2" style="border-radius: 10px;height: 150px" required></textarea>
+            <label for="floatingTextarea2">Chi tiết</label>
+        </div><br>
+        <!-- <div class="form-floating">
+            <textarea name="tinhtrang2" class="form-control" type="date" placeholder="Leave a comment here" id="floatingTextarea3" style="border-radius: 10px;height: 150px"></textarea>
+            <label for="floatingTextarea2">Tinh trạng</label>
+        </div><br> -->
+        <select name="id_lab" class="form-select" aria-label="Default select example" required>
+            <option selected>Phòng Lab</option>
+            @foreach($lab as $item)
+            <option value="{{$item->id}}">{{$item->name}}</option>
+            @endforeach
+        </select><br>
+        <button type="submit" class="btn btn-outline-dark" style="width: 300px; margin-left: 150px;">Thêm</button>
 
     </form>
 </div>

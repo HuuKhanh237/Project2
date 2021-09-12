@@ -50,9 +50,12 @@
         <ul class="sub-menu">
           <li><a class="link_name" href="#">Phòng Lab</a></li>
           <li><a href="{{url('themtb')}}">Thêm thiết bị phòng Lab</a></li>
-          <li><a href="{{url('thietbi')}}">P201</a></li>
-          <li><a href="#">P202</a></li>
-          <li><a href="#">P203</a></li>
+          <li><a href="{{url('P201')}}">P201</a></li>
+          <li><a href="{{url('P202')}}">P202</a></li>
+          <li><a href="{{url('P203')}}">P203</a></li>
+          <li><a href="{{url('P204')}}">P204</a></li>
+          <li><a href="{{url('P205')}}">P205</a></li>
+          
         </ul>
       </li>
       <li>
@@ -66,7 +69,8 @@
         <ul class="sub-menu">
           <li><a class="link_name" href="#">Kho</a></li>
           <li><a href="{{url('themlk')}}">Thêm linh kiện</a></li>
-          <li><a href="#">Kho</a></li>
+          <li><a href="{{url('Khot3')}}">Kho tầng 3</a></li>
+          <li><a href="{{url('Khot5')}}">Kho tầng 5</a></li>
           
         </ul>
       </li>

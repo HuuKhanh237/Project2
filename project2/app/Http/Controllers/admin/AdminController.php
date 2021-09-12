@@ -28,6 +28,27 @@ class AdminController extends Controller
         $linhkien = Admin::linhkien();
         return view('admin.kho',['linhkien'=>$linhkien]);
     }
+    function sua($id){
+        $sua = Admin::get($id)[0];
+        return view('admin.sua',['sua'=>$sua]);
+    }
+    // function sua(){
+      
+    //     return view('admin.sua');
+    // }
+    function suatk(Request $rq, $id){
+        $name = $rq->input('name');
+        $email=$rq->input('email');
+        $password=$rq->input('password');
+        $is_active=$rq->input('is_active');
+        $rs = Admin::sualh($id,$name,$email,$password,$is_active);
+        if($rs== true){
+            return redirect('/admin');
+        }else{
+            return "Cập nhật thất bại";
+        }
+    
+    }
   
 
     
