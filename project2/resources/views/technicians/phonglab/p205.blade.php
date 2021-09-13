@@ -4,6 +4,8 @@
    <h1 style="text-align: center;">Phòng 205</h1>
    <table id="home" class="table table-bordered" style="text-align: center;">
 
+   @if(Session('success'))<div class="alert alert-success">{{Session::get('success')}}</div>@endif
+		@if(Session('error'))<div class="alert alert-success">{{Session::get('error')}}</div>@endif
 <thead>
     
     <tr class="table-dark">

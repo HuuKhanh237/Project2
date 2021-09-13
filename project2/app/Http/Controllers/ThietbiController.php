@@ -50,34 +50,58 @@ class ThietbiController extends Controller
         // $tinhtrang2=$request->input('tinhtrang2');
         $mota = $request->input('mota');
         $id_lab = $request->input('id_lab');
-        $rs = ThietbiModel::themtb($name,$mota,$id_lab);
+        $rs = ThietbiModel::themtb($name, $mota, $id_lab);
         if ($rs == false) {
             return "Thêm Thất Bại";
         } else {
-            return redirect()->route(route:'themtb')->with('success','Thêm thành công');
+            return redirect()->route(route: 'themtb')->with('success', 'Thêm thành công');
         }
     }
     function suathietbi($id)
     {
-        
-        $dulieu= ThietbiModel::thietbi($id);
-        return view('technicians.phonglab.sua', ['dulieuthietbi'=>$dulieu]);
+
+        $dulieu = ThietbiModel::thietbi($id);
+        return view('technicians.phonglab.sua', ['dulieuthietbi' => $dulieu]);
         // print_r($dulieu);
-      
+
     }
-       function update(Request $request)
-        {
-            $id= $request->input('id');
+    function update(Request $request)
+    {
+        $id = $request->input('id');
         $name = $request->input('name');
-        $tinhtrang1=$request->input('tinhtrang1');
-        $tinhtrang2=$request->input('tinhtrang2');
+        $tinhtrang1 = $request->input('tinhtrang1');
+        $tinhtrang2 = $request->input('tinhtrang2');
         $mota = $request->input('mota');
         $id_lab = $request->input('id_lab');
-        $rs = ThietbiModel::suatb($id,$name,$tinhtrang1,$tinhtrang2,$mota,$id_lab);
-        if ($rs == false) {
-            return "Sửa thất bại";
-        } else {
-            return redirect()->route(route:'P201')->with('success','Sửa thành công');
+        $rs = ThietbiModel::suatb($id, $name, $tinhtrang1, $tinhtrang2, $mota, $id_lab);
+        if ($id_lab == 1) {
+            return redirect()->route(route: 'P201')->with('success', 'Sửa thành công');
+        } else 
+        if ($rs == false && $id_lab == 1) {
+            return redirect()->route(route: 'P201')->with('error', 'Không có thông tin nào đc thay đổi');
+        }
+        if ($id_lab == 2) {
+            return redirect()->route(route: 'P202')->with('success', 'Sửa thành công');
+        } else 
+        if ($rs == false && $id_lab == 2) {
+            return redirect()->route(route: 'P202')->with('error', 'Không có thông tin nào đc thay đổi');
+        }
+        if ($id_lab == 3) {
+            return redirect()->route(route: 'P203')->with('success', 'Sửa thành công');
+        } else
+         if ($rs == false && $id_lab == 3) {
+            return redirect()->route(route: 'P203')->with('error', 'Không có thông tin nào đc thay đổi');
+        }
+        if ($id_lab == 4) {
+            return redirect()->route(route: 'P204')->with('success', 'Sửa thành công');
+        } else if ($rs == false && $id_lab == 4) {
+            return redirect()->route(route: 'P204')->with('error', 'Không có thông tin nào đc thay đổi');
+        }
+        if ($id_lab == 5) {
+            return redirect()->route(route: 'P205')->with('success', 'Sửa thành công');
+        } else
+         if ($rs == false && $id_lab == 5) {
+            return redirect()->route(route: 'P205')->with('error', 'Không có thông tin nào đc thay đổi');
         }
     }
 }
