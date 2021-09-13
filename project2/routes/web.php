@@ -24,6 +24,10 @@ Route::get('/themtb',[ThietbiController::class,'showtb'])->name('themtb');
 Route::post('/themtb',[ThietbiController::class,'themtb']);
 Route::get('/lab',[UserController::class,'showidlab'])->name('idlab');
 Route::post('/lab',[UserController::class,'idlab']);
+Route::get('/suatb/{id}',[ThietbiController::class,'suathietbi'])->name('suathietbi');
+Route::post('/suatb',[ThietbiController::class,'update']);
+
+
 //Kho
 Route::get('/Khot3',[KhoController::class,'Khot3'])->name('Khot3');
 Route::get('/Khot5',[KhoController::class,'Khot5'])->name('Khot5');

@@ -28,16 +28,16 @@ class DatabaseSeeder extends Seeder
         //     'password'=>bcrypt('admin')
         //     ]);
 
-//         Admin::create([
-//             'name'=>"Hoàng Tuấn Anh",
-//             'email'=>"vuongkhanh2307@gmail.com",
-//             'password'=>bcrypt('admin')
-//             ]);
-//         User::create([
-//             'name'=>"Hoàng Tuấn Anh",
-//             'email'=>"hta1@gmail.com",
-//             'password'=>bcrypt('admin')
-//             ]);
+        Admin::create([
+            'name'=>"Hoàng Tuấn Anh",
+            'email'=>"hta@gmail.com",
+            'password'=>bcrypt('admin')
+            ]);
+        User::create([
+            'name'=>"Hoàng Tuấn Anh",
+            'email'=>"hta1@gmail.com",
+            'password'=>bcrypt('admin')
+            ]);
 //         Admin::create([
 //             'name'=>"VHK",
 //             'email'=>"hta2@gmail.com",

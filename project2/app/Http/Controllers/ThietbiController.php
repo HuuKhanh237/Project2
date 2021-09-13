@@ -6,6 +6,7 @@ use App\Models\ThietbiModel;
 use App\Models\User;
 use Illuminate\Http\Request;
 
+
 class ThietbiController extends Controller
 {
     function __construct()
@@ -56,5 +57,27 @@ class ThietbiController extends Controller
             return redirect()->route(route:'themtb')->with('success','Thêm thành công');
         }
     }
-   
+    function suathietbi($id)
+    {
+        
+        $dulieu= ThietbiModel::thietbi($id);
+        return view('technicians.phonglab.sua', ['dulieuthietbi'=>$dulieu]);
+        // print_r($dulieu);
+      
+    }
+       function update(Request $request)
+        {
+            $id= $request->input('id');
+        $name = $request->input('name');
+        $tinhtrang1=$request->input('tinhtrang1');
+        $tinhtrang2=$request->input('tinhtrang2');
+        $mota = $request->input('mota');
+        $id_lab = $request->input('id_lab');
+        $rs = ThietbiModel::suatb($id,$name,$tinhtrang1,$tinhtrang2,$mota,$id_lab);
+        if ($rs == false) {
+            return "Sửa thất bại";
+        } else {
+            return redirect()->route(route:'P201')->with('success','Sửa thành công');
+        }
+    }
 }

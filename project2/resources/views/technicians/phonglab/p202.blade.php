@@ -11,7 +11,7 @@
         <th>Mã thiết bị</th>
         <th>Tình trạng</th>
         <th>Mô tả</th>
-        
+        <th>Hành Động</th>
     </tr>
 </thead>
 <tbody>
@@ -21,7 +21,10 @@
         <td>{{ $item->name}}</td>
         <td>{{ $item->tinhtrang1==1?'Tốt':'Hỏng'}}</td>
         <td>{{ $item->mota}}</td>
-        
+        <td>
+            <a href="{{'/suatb/'.$item->id}}">Sửa</a>
+            <a href="">Xóa</a>
+        </td>
     </tr>
     @empty
     <tr class="table-dark">

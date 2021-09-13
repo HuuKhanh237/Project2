@@ -83,4 +83,5 @@ class User extends Authenticatable
        $result=DB::select($sql);
        return $result;
     }
+    
 }

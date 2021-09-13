@@ -48,8 +48,8 @@
           <i class='bx bxs-chevron-down arrow' ></i>
         </div>
         <ul class="sub-menu">
-          <li><a class="link_name" href="#">Phòng Lab</a></li>
-          <li><a href="{{url('themtb')}}">Thêm thiết bị phòng Lab</a></li>
+          <li><a class="link_name" href="#">Phòng Lab</a></li> 
+          <li><a href="{{url('themtb')}}">Thêm thiết bị phòng Lab</a></li>         
           <li><a href="{{url('P201')}}">P201</a></li>
           <li><a href="{{url('P202')}}">P202</a></li>
           <li><a href="{{url('P203')}}">P203</a></li>
