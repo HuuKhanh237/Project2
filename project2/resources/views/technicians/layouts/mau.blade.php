@@ -36,7 +36,11 @@
             </span>
         </a>
         <ul class="sub-menu blank">
-          <li><a class="link_name" href="#">Phòng Lab</a></li>
+          <li><a class="link_name" href="#">  @section('tren')
+            @if(Auth::guard('user')->user() != null)
+            {{Auth::guard('user')->user()->name}}
+            @endif
+            @show</a></li>
         </ul> 
       
       <li>

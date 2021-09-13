@@ -4,7 +4,8 @@
 <div style="text-align: center;">
     <h1>Tài khoản kỹ thuật viên</h1><br><br>
 </div>
-<div>@if(Session('success'))<div class="alert alert-success">{{Session::get('success')}}</div>@endif</div>
+<div>@if(Session('success'))<div class="alert alert-success">{{Session::get('success')}}</div>@endif
+@if(Session('error'))<div class="alert alert-success">{{Session::get('error')}}</div>@endif</div>
 
 <table id="home" class="table">
     <div style="color: black;"><a href="{{url('/admin/register')}}" class="nav-link">Thêm tài khoản</div>

@@ -37,14 +37,21 @@ protected $hidden = [
        $result=DB::select($sql);
        return $result;
     }
-    static function suatk($id,$name,$email,$password,$is_active){
+    static function get($id){
+        return DB::table('users')->where([
+            'id'=>$id
+        ])
+        ->select('name','email','is_active')
+        ->get();
+    }
+    static function suatk($id,$name,$email,$is_active){
         return DB::table('users')->where([
             'id'=>$id
         ])
         ->update([
             'name'=>$name,
             'email'=>$email,
-            'password'=>$password,
+            // 'password'=>$password,
             'is_active'=>$is_active
         ]);
         

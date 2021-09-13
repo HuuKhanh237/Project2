@@ -11,7 +11,13 @@
         <th>Mã thiết bị</th>
         <th>Tình trạng</th>
         <th>Mô tả</th>
+<<<<<<< Updated upstream
         <th>Hành Động</th>
+=======
+
+        
+
+>>>>>>> Stashed changes
     </tr>
 </thead>
 <tbody>
@@ -21,12 +27,15 @@
         <td>{{ $item->name}}</td>
         <td>{{ $item->tinhtrang1==1?'Tốt':'Hỏng'}}</td>
         <td>{{ $item->mota}}</td>
+<<<<<<< Updated upstream
         <td>
             <a href="{{'/suatb/'.$item->id}}">Sửa</a>
             <a href="">Xóa</a>
         </td>
         
         
+=======
+>>>>>>> Stashed changes
     </tr>
     @empty
     <tr class="table-dark">

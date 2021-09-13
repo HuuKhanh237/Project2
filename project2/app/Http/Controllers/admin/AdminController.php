@@ -37,15 +37,16 @@ class AdminController extends Controller
     //     return view('admin.sua');
     // }
     function suatk(Request $rq, $id){
+      
         $name = $rq->input('name');
         $email=$rq->input('email');
-        $password=$rq->input('password');
+        // $password=$rq->input('password');
         $is_active=$rq->input('is_active');
-        $rs = Admin::sualh($id,$name,$email,$password,$is_active);
+        $rs = Admin::suatk($id,$name,$email,$is_active);
         if($rs== true){
-            return redirect('/admin');
+            return redirect()->route(route:'admin.home')->with('success','Sửa thành công');
         }else{
-            return "Cập nhật thất bại";
+            return redirect()->route(route:'admin.home')->with('error','Không có gì được thay đổi');
         }
     
     }
