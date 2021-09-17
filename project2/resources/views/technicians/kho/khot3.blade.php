@@ -12,22 +12,29 @@
         <th>Tình trạng</th>
         <th>Mô tả</th>
         <th>Số lượng</th>
-        
+        <th>Hành động</th>
     </tr>
 </thead>
 <tbody>
     @forelse ($Khot3 as $item)
     <tr>
         
-        <td>{{ $item->name}}</td>
+        <td>
+            <p> {{ $item->name}}</p>
+            <img src="{{ $item->image}}" width="150px">
+        </td>
         <td>{{ $item->tinhtrang1==1?'Tốt':'Hỏng'}}</td>
         <td>{{ $item->mota}}</td>
         <td>{{ $item->soluong}}</td>
+        <td>
+            <a href="{{'/sualk/'.$item->id}}">Sửa</a>
+            <a href="{{'xoalk/'.$item->id}}">Xóa</a>
+        </td>
         
     </tr>
     @empty
     <tr class="table-dark">
-        <th colspan="4">Danh sách trống</th>
+        <th colspan="5">Danh sách trống</th>
     </tr>
     @endforelse
 </tbody>

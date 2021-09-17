@@ -26,12 +26,17 @@
             <textarea name="tinhtrang2" class="form-control" type="date" placeholder="Leave a comment here" id="floatingTextarea3" style="border-radius: 10px;height: 150px"></textarea>
             <label for="floatingTextarea2">Tinh trạng</label>
         </div><br> -->
+
         <select name="id_lab" class="form-select" aria-label="Default select example" required>
             <option selected>Phòng Lab</option>
             @foreach($lab as $item)
             <option value="{{$item->id}}">{{$item->name}}</option>
             @endforeach
-        </select><br>
+        </select>
+        <div class="col-md-4">
+            <label for="validationDefault01" class="form-label">Image</label>
+            <input name="image" type="file" class="form-control" id="validationDefault01"  required>
+        </div>
         <button type="submit" class="btn btn-outline-dark" style="width: 300px; margin-left: 150px;">Thêm</button>
 
     </form>

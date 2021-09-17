@@ -50,6 +50,10 @@
 	<textarea name="mota" class="form-control" placeholder="" id="floatingTextarea2" style="border-radius: 10px;height: 150px" value="">{{ $item->mota}}</textarea>
 	<label for="floatingTextarea2">Mô tả</label>
 </div><br>
+<div class="col-md-4">
+	<label for="validationDefault01" class="form-label">Image</label>
+	<input type="file" class="form-control" name="image" id="validationDefault01" value="{{ $item->image}}" required>
+</div>
 @endforeach
 <center><button style="height: 40px ; width: 300px;" type="submit" class="btn btn-dark">Sửa lại</button></center>
 </form>

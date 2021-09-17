@@ -19,6 +19,7 @@ class CreateLinhkienTable extends Migration
             $table->tinyInteger('tinhtrang1')->default(1);
             $table->string('mota',550);
             $table->float('soluong', 8, 2);
+
             $table->bigInteger('id_kho')->unsigned();
             $table->foreign('id_kho')
             ->references('id')

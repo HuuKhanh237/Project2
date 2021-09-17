@@ -11,6 +11,7 @@
     <tr class="table-dark">
        
         <th>Mã thiết bị</th>
+        
         <th>Tình trạng</th>
         <th>Mô tả</th>
         <th>Hành Động</th>
@@ -20,12 +21,15 @@
     @forelse ($P203 as $item)
     <tr>
        
-        <td>{{ $item->name}}</td>
+        <td>
+            <p> {{ $item->name}}</p>
+            <img src="{{ $item->image}}" width="150px">
+        </td>
         <td>{{ $item->tinhtrang1==1?'Tốt':'Hỏng'}}</td>
         <td>{{ $item->mota}}</td>
         <td>
             <a href="{{'/suatb/'.$item->id}}">Sửa</a>
-            <a href="">Xóa</a>
+            <a href="{{'/xoatb/{id}'.$item->id}}">Xóa</a>
         </td>
     </tr>
     @empty

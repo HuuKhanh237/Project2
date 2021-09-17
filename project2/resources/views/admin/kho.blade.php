@@ -20,7 +20,10 @@
         @forelse ($linhkien as $item)
         <tr>
             <td>{{ $item->id}}</td>
-            <td>{{ $item->name}}</td>
+            <td>
+                <p> {{ $item->name}}</p>
+                <img src="{{asset('storage/'. $item->image)}}" width="150px">
+            </td>
             <td>{{ $item->mota}}</td>
             <td>{{ $item->soluong}}</td>
             <td>{{ $item->id_kho==1?'Kho tầng 3':'Kho tầng 5'}}</td>
