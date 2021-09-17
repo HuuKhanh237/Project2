@@ -21,14 +21,13 @@
             <td>{{ $item->id}}</td>
             <td>{{ $item->name}}</td>
             <td>{{ $item->mota}}</td>
-            <!-- <td>{{($item->id_lab)}} </td> -->
-            <td>
-            {{@if($$item->id_lab==1)P201@endif
-            @if($$item->id_lab==2)P202@elseif
-            @if($$item->id_lab==3)P203@elseif
-            @if($$item->id_lab==4)P204@else
-            @if($$item->id_lab==5)P205@endif}}
+            <td>{{($item->id_lab==1 ? 'P201' : '')}}
+            {{($item->id_lab==2 ? 'P202' : '')}}
+            {{($item->id_lab==3 ? 'P203' : '')}}
+            {{($item->id_lab==4 ? 'P204' : '')}}
+            {{($item->id_lab==5 ? 'P205' : '')}}
             </td>
+
         </tr>
         @empty
         <tr class="table-dark">

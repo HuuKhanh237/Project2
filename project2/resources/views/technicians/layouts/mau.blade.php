@@ -153,7 +153,7 @@
   <section class="home-section">
     <div class="home-content">
       <i class='bx bx-menu' ></i>
-      <img style="margin-top: 50px;" src="/storage/ll6.gif" alt="">
+      <img style="margin-top: 50px;" src="storage/ll6.gif" alt="">
       </div>
       <br/> <br/> <br/>
         @show
