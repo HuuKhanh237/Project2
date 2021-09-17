@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\ThietbiModel;
 use App\Models\User;
 use Illuminate\Http\Request;
-
+use Illuminate\Support\Facades\DB;
 
 class ThietbiController extends Controller
 {
@@ -49,8 +49,11 @@ class ThietbiController extends Controller
         // $tinhtrang1=$request->input('tinhtrang1');
         // $tinhtrang2=$request->input('tinhtrang2');
         $mota = $request->input('mota');
+        $imageName = time().'.'.$request->file('image')->extension();
+        $path = 'storage/'. $imageName;
+        $request->file('image')->storeAs('public',$imageName);
         $id_lab = $request->input('id_lab');
-        $rs = ThietbiModel::themtb($name, $mota, $id_lab);
+        $rs = ThietbiModel::themtb($name, $mota,$path,$id_lab);
         if ($rs == false) {
             return "Thêm Thất Bại";
         } else {
@@ -72,8 +75,14 @@ class ThietbiController extends Controller
         $tinhtrang1 = $request->input('tinhtrang1');
         $tinhtrang2 = $request->input('tinhtrang2');
         $mota = $request->input('mota');
+        $path="";
+        if(!empty($request->file('image'))){
+            $imageName = time().'.'.$request->file('image')->extension();
+            $path = 'storage/'. $imageName;
+            $request->file('image')->storeAs('public',$imageName);
+        }
         $id_lab = $request->input('id_lab');
-        $rs = ThietbiModel::suatb($id, $name, $tinhtrang1, $tinhtrang2, $mota, $id_lab);
+        $rs = ThietbiModel::suatb($id, $name, $tinhtrang1, $tinhtrang2, $mota,$path, $id_lab);
         if ($id_lab == 1) {
             return redirect()->route(route: 'P201')->with('success', 'Sửa thành công');
         } else 
@@ -103,5 +112,11 @@ class ThietbiController extends Controller
          if ($rs == false && $id_lab == 5) {
             return redirect()->route(route: 'P205')->with('error', 'Không có thông tin nào đc thay đổi');
         }
+    }
+    function deletethietbi($id){
+        $rs = ThietbiModel::deletethietbi($id);
+        if($rs != 0) return redirect()->route(route: 'P201');
+        
+
     }
 }

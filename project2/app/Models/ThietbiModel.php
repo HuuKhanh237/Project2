@@ -19,25 +19,34 @@ class ThietbiModel extends Model
        $result=DB::select($sql);
        return $result;
     }
-    static function themtb($name,$mota,$id_lab){
+    static function themtb($name,$mota,$path,$id_lab){
         return DB::table('thietbi')->insert([
             'name'=>$name,
             // 'tinhtrang1'=>$tinhtrang1,
             // 'tinhtrang2'=>$tinhtrang2,
             'mota'=>$mota,
-            'id_lab'=>$id_lab
+            'image'=>$path,
+            'id_lab'=>$id_lab,
             
         ]);
     }
-    static function suatb($id,$name,$tinhtrang1,$tinhtrang2,$mota,$id_lab){
+    static function suatb($id,$name,$tinhtrang1,$tinhtrang2,$mota,$path,$id_lab){
         return DB::table('thietbi')->where('id',$id)->update([
             'name'=>$name,
             'tinhtrang1'=>$tinhtrang1,
             'tinhtrang2'=>$tinhtrang2,
             'mota'=>$mota,
+            'image'=>$path,
             'id_lab'=>$id_lab
             
         ]);
     }
+    static function deletethietbi($id){
+        $sql = "DELETE FROM thietbi WHERE id='$id'";
+        $rs = DB::delete($sql);
+        return $rs;
+
+    }
+    
 
 }

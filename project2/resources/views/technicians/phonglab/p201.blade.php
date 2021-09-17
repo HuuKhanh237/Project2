@@ -9,24 +9,28 @@
 <thead>
     
     <tr class="table-dark">
-        <th>Id</th>
+        {{-- <th>Id</th> --}}
         <th>Mã thiết bị</th>
+        
         <th>Tình trạng</th>
         <th>Mô tả</th>
         <th>Hành Động</th>
     </tr>
 </thead>
-<tbody>
+<tbody style="text-align: center" >
     @forelse ($P201 as $item)
-    <tr>
-        <td>{{ $item->id}}</td>
-        <td>{{ $item->name}}</td>
+    <tr >
+        {{-- <td>{{ $item->id}}</td> --}}
+        <td>
+            <p> {{ $item->name}}</p>
+            <img src="{{ $item->image}}" width="150px">
+        </td>
+        
         <td>{{ $item->tinhtrang1==1?'Tốt':'Hỏng'}}</td>
         <td>{{ $item->mota}}</td>
-
         <td>
             <a href="{{'suatb/'.$item->id}}">Sửa</a>
-            <a href="">Xóa</a>
+            <a href="{{'xoatb/'.$item->id}}">Xóa</a>
         </td>
         
         
@@ -34,7 +38,7 @@
     </tr>
     @empty
     <tr class="table-dark">
-        <th colspan="4">Danh sách trống</th>
+        <th colspan="5" class="text-center">Danh sách trống</th>
     </tr>
     @endforelse
 </tbody>
