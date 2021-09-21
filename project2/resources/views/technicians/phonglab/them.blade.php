@@ -28,7 +28,7 @@
         </div><br> -->
 
         <select name="id_lab" class="form-select" aria-label="Default select example" required>
-            <option selected>Phòng Lab</option>
+            
             @foreach($lab as $item)
             <option value="{{$item->id}}">{{$item->name}}</option>
             @endforeach
@@ -37,6 +37,7 @@
             <label for="validationDefault01" class="form-label">Image</label>
             <input name="image" type="file" class="form-control" id="validationDefault01"  required>
         </div>
+        <br>
         <button type="submit" class="btn btn-outline-dark" style="width: 300px; margin-left: 150px;">Thêm</button>
 
     </form>

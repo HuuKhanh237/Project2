@@ -1,5 +1,6 @@
 body{
     background-color: whitesmoke;
+    font-family:Cambria;
 }
 tr{
     border:1px solid black;
@@ -219,7 +220,7 @@ box-sizing: border-box
   }
   .home-section{
     position: relative;
-    background: #E4E9F7;
+    background: #f8f8f8;
     height: 100%;
     left: 260px;
     width: calc(100% - 260px);

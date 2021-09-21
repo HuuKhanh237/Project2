@@ -7,12 +7,12 @@
 <thead>
     
     <tr class="table-dark">
-        
-        <th>Tên linh kiện</th>
-        <th>Tình trạng</th>
+        <th style="width: 120px;">Tên linh kiện</th>
+        <th style="width: 90px;">Tình trạng</th>
         <th>Mô tả</th>
-        <th>Số lượng</th>
-        <th>Hành động</th>
+        <th style="width: 70px; text-align: center;">Số lượng</th>
+        <th style="width: 100px;">Hành động</th>
+        <th style="width: 100px;"> Báo cáo</th>
     </tr>
 </thead>
 <tbody>
@@ -21,7 +21,7 @@
         
         <td>
             <p> {{ $item->name}}</p>
-            <img src="{{ $item->image}}" width="150px">
+           
         </td>
         <td>{{ $item->tinhtrang1==1?'Tốt':'Hỏng'}}</td>
         <td>{{ $item->mota}}</td>

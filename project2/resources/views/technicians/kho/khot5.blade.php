@@ -21,13 +21,13 @@
         
         <td>
             <p> {{ $item->name}}</p>
-            <img src="{{ $item->image}}" width="150px">
+            
         </td>
         <td>{{ $item->tinhtrang1==1?'Tốt':'Hỏng'}}</td>
         <td>{{ $item->mota}}</td>
         <td>{{ $item->soluong}}</td>
         <td>
-            <a href="">Sửa</a>
+        <a href="{{'sualk/'.$item->id}}">Sửa</a>
             <a href="{{'xoalk/'.$item->id}}">Xóa</a>
         </td>
     </tr>
