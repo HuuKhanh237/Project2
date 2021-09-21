@@ -4,10 +4,8 @@ namespace App\Http\Controllers;
 
 use App\Models\ThietbiModel;
 use App\Models\User;
-use Illuminate\Contracts\Session\Session;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
-use Illuminate\Support\Facades\Redirect;
 
 class ThietbiController extends Controller
 {
@@ -55,7 +53,7 @@ class ThietbiController extends Controller
         $path = 'storage/'. $imageName;
         $request->file('image')->storeAs('public',$imageName);
         $id_lab = $request->input('id_lab');
-        $rs = ThietbiModel::themtb($name, $mota,$id_lab,$path);
+        $rs = ThietbiModel::themtb($name, $mota,$path,$id_lab);
         if ($rs == false) {
             return "Thêm Thất Bại";
         } else {
@@ -64,42 +62,27 @@ class ThietbiController extends Controller
     }
     function suathietbi($id)
     {
-        
+
         $dulieu = ThietbiModel::thietbi($id);
         return view('technicians.phonglab.sua', ['dulieuthietbi' => $dulieu]);
         // print_r($dulieu);
 
     }
-    function suatb(Request $request)
+    function update(Request $request)
     {
         $id = $request->input('id');
         $name = $request->input('name');
         $tinhtrang1 = $request->input('tinhtrang1');
         $tinhtrang2 = $request->input('tinhtrang2');
         $mota = $request->input('mota');
-        $id_lab = $request->input('id_lab');
-        // $path="";
-        // if(!empty($request->file('image'))){
-        //     $image = time().'.'.$request->file('image')->extension();
-        //     $request->file('image')->storeAs('public/thietbi',$image);
-        //     $path = 'storage/thietbi'. $image;
-        // }
-        // $path = '';
-        // if($request->hasFile('image')){
-        //     $image = $request->file('image');
-        //     $path = time().'.'.$image->getClientOriginalName();
-        //     $destinationPath = public_path('public');
-        //     $image->move($destinationPath, $path);
-        // }
         $path="";
-        if(file_exists($request->file('img'))){
-            $imageName = time().'.'.$request->file('img')->extension();
+        if(!empty($request->file('image'))){
+            $imageName = time().'.'.$request->file('image')->extension();
             $path = 'storage/'. $imageName;
-            $request->file('img')->storeAs('public',$imageName);
+            $request->file('image')->storeAs('public',$imageName);
         }
-        //Store Image
-    
-        $rs = ThietbiModel::suatb($id, $name, $tinhtrang1, $tinhtrang2, $mota, $id_lab,$path);
+        $id_lab = $request->input('id_lab');
+        $rs = ThietbiModel::suatb($id, $name, $tinhtrang1, $tinhtrang2, $mota,$path, $id_lab);
         if ($id_lab == 1) {
             return redirect()->route(route: 'P201')->with('success', 'Sửa thành công');
         } else 
@@ -130,34 +113,10 @@ class ThietbiController extends Controller
             return redirect()->route(route: 'P205')->with('error', 'Không có thông tin nào đc thay đổi');
         }
     }
-
     function deletethietbi($id){
         $rs = ThietbiModel::deletethietbi($id);
         if($rs != 0) return redirect()->route(route: 'P201');
         
 
     }
-    // function suatb(Request $request,$id){
-    //     $data = array();
-        
-    //     $data['name']= $request->name;
-    //     $data['tinhtrang1']=$request->tinhtrang1;
-    //     $data['tinhtrang2']=$request->tinhtrang2;
-    //     $data['mota']=$request->mota;
-    //     $data['id_lab'] = $request->id_lab;
-    //     $getimage= $request->file('image');
-    //     if($getimage){
-    //         $getimages= $getimage->getClientOriginalName();
-    //         $nameimg= current(explode('.',$getimages));
-    //         $new= $nameimg.rand(0,99).'.'. $getimage->getClientOriginalExtension();
-    //         $getimage->move('public',$new);
-    //         $data['image']=$new;
-    //         DB::table('thietbi')->where('id',$id)->update($data);
-           
-    //         return Redirect::to('suathietbi');
-    //     }
-    //     DB::table('thietbi')->where('id',$id)->update($data);
-        
-    //         return Redirect::to('P201');
-    // }
 }

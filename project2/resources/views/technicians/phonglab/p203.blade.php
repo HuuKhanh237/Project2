@@ -9,11 +9,12 @@
 <thead>
     
     <tr class="table-dark">
-    <th style="width :90px">Mã thiết bị</th>
-        <th style="width :90px">Tình trạng</th>
+       
+        <th>Mã thiết bị</th>
+        
+        <th>Tình trạng</th>
         <th>Mô tả</th>
-        <th style="width :150px">Hành Động</th>
-        <th style="width :90px">Báo cáo</th>
+        <th>Hành Động</th>
     </tr>
 </thead>
 <tbody>
@@ -21,10 +22,8 @@
     <tr>
        
         <td>
-            <p> {{ $item->name}}
-            <img src="{{$item->image}}" width="250px">  
-            </p>
-           
+            <p> {{ $item->name}}</p>
+            <img src="{{ $item->image}}" width="150px">
         </td>
         <td>{{ $item->tinhtrang1==1?'Tốt':'Hỏng'}}</td>
         <td>{{ $item->mota}}</td>

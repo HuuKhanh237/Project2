@@ -9,40 +9,32 @@
 <thead>
     
     <tr class="table-dark">
-        <th style="width :90px">Mã thiết bị</th>
-        <th style="width :400px">Tình trạng</th>
+        {{-- <th>Id</th> --}}
+        <th>Mã thiết bị</th>
+        
+        <th>Tình trạng</th>
         <th>Mô tả</th>
-        <th style="width :150px">Hành Động</th>
-        <th style="width :90px">Báo cáo</th>
+        <th>Hành Động</th>
     </tr>
 </thead>
 <tbody style="text-align: center" >
     @forelse ($P201 as $item)
     <tr >
-       
+        {{-- <td>{{ $item->id}}</td> --}}
         <td>
             <p> {{ $item->name}}</p>
-            <img src="{{$item->image}}" width="250px">   
-        </td>       
-        <td>
-            <!-- {{ $item->tinhtrang1==1?'Tốt':'Hỏng'}} -->
-            @if($item->tinhtrang1==1) <h4>Tốt</h4>
-            @elseif($item->tinhtrang1==0) <h4 style="color: red;">Hỏng</h4>
-            {{$item->tinhtrang2}}
-            @endif
+            <img src="{{ $item->image}}" width="150px">
         </td>
-        <td>{{ $item->mota}}
-        </td>
+        
+        <td>{{ $item->tinhtrang1==1?'Tốt':'Hỏng'}}</td>
+        <td>{{ $item->mota}}</td>
         <td>
-        <a href="{{'suatb/'.$item->id}}"><button type="button" class="btn btn-outline-dark">Sửa</button></a>
-           
+            <a href="{{'suatb/'.$item->id}}">Sửa</a>
             <a href="{{'xoatb/'.$item->id}}">Xóa</a>
         </td>
-        <td>
-        <a href=""><button type="button" class="btn btn-outline-dark">Báo cáo</button></a>
-           
-            
-        </td>
+        
+        
+
     </tr>
     @empty
     <tr class="table-dark">

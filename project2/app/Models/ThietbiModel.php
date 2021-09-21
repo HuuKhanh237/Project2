@@ -14,85 +14,39 @@ class ThietbiModel extends Model
     //     $rs = DB::insert($sql);
     //     return $rs;
     // }
-    static function thietbi($id)
-    {
-        $sql = "SELECT * FROM thietbi WHERE id = '$id'";
-        $result = DB::select($sql);
-        return $result;
+    static function thietbi($id){
+       $sql = "SELECT * FROM thietbi WHERE id = '$id'";
+       $result=DB::select($sql);
+       return $result;
     }
-    static function themtb($name, $mota,$id_lab,$path)
-    {
+    static function themtb($name,$mota,$path,$id_lab){
         return DB::table('thietbi')->insert([
-            'name' => $name,
+            'name'=>$name,
             // 'tinhtrang1'=>$tinhtrang1,
             // 'tinhtrang2'=>$tinhtrang2,
-            'mota' => $mota,
-            'image' => $path,
-            'id_lab' => $id_lab,
-
+            'mota'=>$mota,
+            'image'=>$path,
+            'id_lab'=>$id_lab,
+            
         ]);
     }
-    // static function suatb($id,$name,$tinhtrang1,$tinhtrang2,$mota,$id_lab,$path){
-       
-    //     return DB::table('thietbi')->where('id',$id)->update([
-    //         'name'=>$name,
-    //         'tinhtrang1'=>$tinhtrang1,
-    //         'tinhtrang2'=>$tinhtrang2,
-    //         'mota'=>$mota,         
-    //         'id_lab'=>$id_lab
-
-    //     ]);  
-    //         return DB::table('thietbi')->where('id',$id)->update([
-    //             'name'=>$name,
-    //             'tinhtrang1'=>$tinhtrang1,
-    //             'tinhtrang2'=>$tinhtrang2,
-    //             'mota'=>$mota,
-    //             'id_lab'=>$id_lab,
-    //             'image'=>$path
-    //     ]);}
-  
-
-    // static function suatb($id, $name, $tinhtrang1, $tinhtrang2, $mota, $id_lab ,$path)
-    // {
-    //     if (empty($path)) {
-    //         $sql = "UPDATE thietbi SET name='$name',
-    //                  tinhtrang1='$tinhtrang1',
-    //               tinhtrang2='$tinhtrang2',
-    //                 mota='$mota',
-            
-    //                id_lab='$id_lab' WHERE id='$id'";
-    //     } else {
-    //         $sql = "UPDATE thietbi SET name='$name',
-    //         tinhtrang1='$tinhtrang1',
-    //        tinhtrang2='$tinhtrang2',
-    //        mota='$mota',
-    //       id_lab='$id_lab',image='$path' WHERE id='$id'";
-    //     }
-    //     return DB::update($sql);
-    // }
-    static function suatb($id,$name,$tinhtrang1,$tinhtrang2,$mota,$id_lab,$path){
-        if($path == ""){
-            return DB::table('thietbi')->where('id',$id)->update([
-                'name'=>$name,
-                'tinhtrang1'=>$tinhtrang1,
-                'tinhtrang2'=>$tinhtrang2,
-                'mota'=>$mota,
-                'id_lab'=>$id_lab
-            ]);
-        }
+    static function suatb($id,$name,$tinhtrang1,$tinhtrang2,$mota,$path,$id_lab){
         return DB::table('thietbi')->where('id',$id)->update([
             'name'=>$name,
             'tinhtrang1'=>$tinhtrang1,
             'tinhtrang2'=>$tinhtrang2,
             'mota'=>$mota,
-            'id_lab'=>$id_lab,
-            'image'=>$path
+            'image'=>$path,
+            'id_lab'=>$id_lab
+            
         ]);
     }
-    static function deletethietbi($id)
-    {
+    static function deletethietbi($id){
         $sql = "DELETE FROM thietbi WHERE id='$id'";
         $rs = DB::delete($sql);
         return $rs;
+
     }
+    
+
 }

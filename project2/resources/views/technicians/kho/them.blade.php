@@ -1,7 +1,7 @@
 @extends('technicians.layouts.mau')
 @section('title','Thêm linh kiện')
 @section('content')
-
+<h1 style="text-align: center;">Thêm linh kiện trong kho</h1>
 
 <h1 style="text-align: center;">Thêm linh kiện trong kho</h1>
 <div class="container" style="width: 600px; padding-top: 30px;">
@@ -21,13 +21,16 @@
             <input style=" border-radius: 10px;  height: 50px;" type="number" name="soluong" placeholder="Nhập số lượng" required>
         </div>
         <select name="id_kho" class="form-select" aria-label="Default select example" required>
-            
+            <option selected>Kho</option>
             @foreach($kho as $item)
             <option value="{{$item->id}}">{{$item->name}}</option>
             @endforeach
            
         </select>
-       <br>
+        <div class="col-md-4">
+            <label for="validationDefault01" class="form-label">Image</label>
+            <input name="image" type="file" class="form-control" id="validationDefault01"  required>
+        </div>
         <button type="submit" class="btn btn-outline-dark" style="width: 300px; margin-left: 150px;">Thêm</button>
         
     </form>

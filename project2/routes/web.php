@@ -25,7 +25,7 @@ Route::post('/themtb',[ThietbiController::class,'themtb']);
 Route::get('/lab',[UserController::class,'showidlab'])->name('idlab');
 Route::post('/lab',[UserController::class,'idlab']);
 Route::get('/suatb/{id}',[ThietbiController::class,'suathietbi'])->name('suathietbi');
-Route::post('/suatb',[ThietbiController::class,'suatb']);
+Route::post('/suatb',[ThietbiController::class,'update']);
 Route::get('/xoatb/{id}',[ThietbiController::class,'deletethietbi'])->name('xoathietbi');
 
 
@@ -38,7 +38,7 @@ Route::get('/kho',[KhoController::class,'showidkho'])->name('idkho');
 Route::post('/kho',[KhoController::class,'idkho']);
 Route::get('/xoalk/{id}',[KhoController::class,'deletelinhkien'])->name('deletelinhkien');
 Route::get('/sualk/{id}',[KhoController::class,'sualinhkien'])->name('sualinhkien');
-Route::post('/sualk',[KhoController::class,'sualk']);
+Route::post('/sualk',[KhoController::class,'update']);
 
 
 
