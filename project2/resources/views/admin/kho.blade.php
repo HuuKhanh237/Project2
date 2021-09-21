@@ -14,6 +14,7 @@
             <th>Mô tả</th>
             <th>Số lượng</th>
             <th>Kho</th>
+            <th>Xóa</th>
         </tr>
     </thead>
     <tbody>
@@ -27,6 +28,7 @@
             <td>{{ $item->mota}}</td>
             <td>{{ $item->soluong}}</td>
             <td>{{ $item->id_kho==1?'Kho tầng 3':'Kho tầng 5'}}</td>
+            
         </tr>
         @empty
         <tr class="table-dark">

@@ -8,7 +8,7 @@
 	</center>
     <form method="post" action="/sualk">
 		@csrf
-		@foreach ($dulieuthietbi as $item)
+		@foreach ($dulieulinhkien as $item)
 
 
     <input type="hidden" id="id" name="id" value="{{ $item->id}}" />
@@ -44,10 +44,7 @@
         <div class="input-group mb-3">
             <input style=" border-radius: 10px;  height: 50px;" type="number" name="soluong" placeholder="" value="{{ $item->soluong}}"  required>
         </div>
-        <div class="col-md-4">
-            <label for="validationDefault01" class="form-label">Image</label>
-            <input type="file" class="form-control" id="validationDefault01" value="{{ $item->image}}" required>
-        </div>
+        
         @endforeach
 <center><button style="height: 40px ; width: 300px;" type="submit" class="btn btn-dark">Sửa lại</button></center>
 </form>
