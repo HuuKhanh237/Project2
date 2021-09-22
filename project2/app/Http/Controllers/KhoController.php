@@ -36,11 +36,11 @@ class KhoController extends Controller
         // $tinhtrang2=$request->input('tinhtrang2');
         $mota = $request->input('mota');
         $soluong= $request->input('soluong');
-        // $imageName = time().'.'.$request->file('image')->extension();
-        // $path = 'storage/'. $imageName;
-        // $request->file('image')->storeAs('public',$imageName);
+        $imageName = time().'.'.$request->file('image')->extension();
+        $path = 'storage/'. $imageName;
+        $request->file('image')->storeAs('public',$imageName);
         $id_kho = $request->input('id_kho');
-        $rs = KhoModel::themlk($name,$mota,$soluong,$id_kho);
+        $rs = KhoModel::themlk($name,$mota,$soluong,$id_kho,$path);
         if ($rs == false) {
             return "Thêm Thất Bại";
         } else {
@@ -68,14 +68,14 @@ class KhoController extends Controller
         $tinhtrang1 = $request->input('tinhtrang1');
         $mota = $request->input('mota');
         $soluong = $request->input('soluong');
-        // $path="";
-        // if(!empty($request->file('image'))){
-        //     $imageName = time().'.'.$request->file('image')->extension();
-        //     $path = 'storage/'. $imageName;
-        //     $request->file('image')->storeAs('public',$imageName);
-        // }
+        $path="";
+        if(file_exists($request->file('img'))){
+            $imageName = time().'.'.$request->file('img')->extension();
+            $path = 'storage/'. $imageName;
+            $request->file('img')->storeAs('public',$imageName);
+        }
         $id_kho = $request->input('id_kho');
-        $rs = KhoModel::sualk($id, $name, $tinhtrang1, $mota,$soluong, $id_kho);
+        $rs = KhoModel::sualk($id, $name, $tinhtrang1, $mota,$soluong, $id_kho,$path);
         if ($id_kho == 1) {
             return redirect()->route(route: 'Khot3')->with('success', 'Sửa thành công');
         } else 

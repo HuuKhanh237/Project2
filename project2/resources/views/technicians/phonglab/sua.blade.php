@@ -38,7 +38,7 @@
 			</select>
 		</div><br>
 		<div class="form-group">
-			<label for="sodienthoai">Tình Trạng 2</label>
+			<label for="sodienthoai">Lỗi</label>
 			<input type="text" class="form-control" id="tinhtrang2" style="border-radius: 10px;height: 70px" name="tinhtrang2" placeholder="Tình Trạng 2" maxlength="255" value="{{$item->tinhtrang2}}" required />
 		</div>
 		<!-- <div class="form-floating">
@@ -54,6 +54,7 @@
 		<div class="col-md-4">
 			<label for="validationDefault01" class="form-label">Image</label>
 			<input name="img" type="file" class="form-control" id="validationDefault01">
+			<img id="avatar" width="200px" src="{{asset($item->image)}}">
 		</div>
 
 		@endforeach

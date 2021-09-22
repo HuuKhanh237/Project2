@@ -19,16 +19,36 @@ class KhoModel extends Model
        $result=DB::select($sql);
        return $result;
     }
-    static function themlk($name,$mota,$soluong,$id_kho){
+    static function themlk($name,$mota,$soluong,$id_kho,$path){
         return DB::table('linhkien')->insert([
             'name'=>$name,
             // 'tinhtrang1'=>$tinhtrang1,
             // 'tinhtrang2'=>$tinhtrang2,
             'mota'=>$mota,
             'soluong'=>$soluong,
-            // 'image'=>$path,
-            'id_kho'=>$id_kho
+            'id_kho'=>$id_kho,
+            'image'=>$path
             
+        ]);
+    }
+    static function sualk($id,$name,$tinhtrang1,$mota,$soluong,$id_kho,$path){
+        if($path == ""){
+            return DB::table('linhkien')->where('id',$id)->update([
+                'name'=>$name,
+                'tinhtrang1'=>$tinhtrang1,
+                'mota'=>$mota,
+                'soluong'=>$soluong,
+                'id_kho'=>$id_kho
+                
+            ]);
+        }
+        return DB::table('linhkien')->where('id',$id)->update([
+            'name'=>$name,
+            'tinhtrang1'=>$tinhtrang1,
+            'mota'=>$mota,
+            'soluong'=>$soluong,
+            'id_kho'=>$id_kho,
+            'image'=>$path
         ]);
     }
     static function deletelinhkien($id){
@@ -37,15 +57,5 @@ class KhoModel extends Model
         return $rs;
 
     }
-    static function sualk($id,$name,$tinhtrang1,$mota,$soluong,$id_kho){
-        return DB::table('linhkien')->where('id',$id)->update([
-            'name'=>$name,
-            'tinhtrang1'=>$tinhtrang1,
-            'mota'=>$mota,
-            'soluong'=>$soluong,
-            // 'image'=>$path,
-            'id_kho'=>$id_kho
-            
-        ]);
-    }
+    
 }

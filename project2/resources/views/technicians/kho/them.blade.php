@@ -27,6 +27,10 @@
             @endforeach
            
         </select>
+        <div class="col-md-4">
+            <label for="validationDefault01" class="form-label">Image</label>
+            <input name="image" type="file" class="form-control" id="validationDefault01"  required>
+        </div>
        <br>
         <button type="submit" class="btn btn-outline-dark" style="width: 300px; margin-left: 150px;">Thêm</button>
         

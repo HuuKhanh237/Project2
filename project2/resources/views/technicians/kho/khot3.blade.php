@@ -7,12 +7,12 @@
 <thead>
     
     <tr class="table-dark">
-        <th style="width: 120px;">Tên linh kiện</th>
-        <th style="width: 90px;">Tình trạng</th>
+        
+        <th>Tên linh kiện</th>
+        <th>Tình trạng</th>
         <th>Mô tả</th>
-        <th style="width: 70px; text-align: center;">Số lượng</th>
-        <th style="width: 100px;">Hành động</th>
-        <th style="width: 100px;"> Báo cáo</th>
+        <th>Số lượng</th>
+        <th>Hành động</th>
     </tr>
 </thead>
 <tbody>
@@ -20,17 +20,19 @@
     <tr>
         
         <td>
-            <p> {{ $item->name}}</p>
-           
+            <p> {{ $item->name}}
+            
+            </p>
+            <img src="{{$item->image}}" width="250px">
+            
         </td>
         <td>{{ $item->tinhtrang1==1?'Tốt':'Hỏng'}}</td>
         <td>{{ $item->mota}}</td>
         <td>{{ $item->soluong}}</td>
         <td>
-            <a href="{{'/sualk/'.$item->id}}">Sửa</a>
+        <a href="{{'sualk/'.$item->id}}">Sửa</a>
             <a href="{{'xoalk/'.$item->id}}">Xóa</a>
         </td>
-        
     </tr>
     @empty
     <tr class="table-dark">

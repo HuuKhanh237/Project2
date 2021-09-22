@@ -20,7 +20,10 @@
     <tr>
         
         <td>
-            <p> {{ $item->name}}</p>
+            <p> {{ $item->name}}
+            
+            </p>
+            <img src="{{$item->image}}" width="250px">
             
         </td>
         <td>{{ $item->tinhtrang1==1?'Tốt':'Hỏng'}}</td>
