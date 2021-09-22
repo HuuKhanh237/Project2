@@ -52,5 +52,6 @@ Route::get('admin/thietbi',[AdminController::class,'thietbi'])->name('admin.thie
 Route::get('admin/linhkien',[AdminController::class,'linhkien'])->name('admin.linkkien');
 Route::get('/admin/sua/{id}',[AdminController::class,'sua'])->name('admin.sua');
 Route::post('/admin/sua/{id}',[AdminController::class,'suatk']);
-
+Route::get('/admin/xoatb/{id}',[AdminController::class,'deletethietbi'])->name('xoathietbi');
+Route::get('/admin/xoalk/{id}',[AdminController::class,'deletelinhkien'])->name('xoalinhkien');
 

@@ -30,7 +30,7 @@
         <td>{{ $item->mota}}</td>
         <td>
             <a href="{{'/suatb/'.$item->id}}">Sửa</a>
-            <a href="{{'/xoatb/'.$item->id}}">Xóa</a>
+            
         </td>
     </tr>
     @empty

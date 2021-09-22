@@ -56,5 +56,16 @@ protected $hidden = [
         ]);
         
     }
-   
+    static function deletethietbi($id)
+    {
+        $sql = "DELETE FROM thietbi WHERE id='$id'";
+        $rs = DB::delete($sql);
+        return $rs;
+    }
+    static function deletelinhkien($id)
+    {
+        $sql = "DELETE FROM linhkien WHERE id='$id'";
+        $rs = DB::delete($sql);
+        return $rs;
+    }
 }

@@ -50,6 +50,18 @@ class AdminController extends Controller
         }
     
     }
+    function deletethietbi($id){
+        $rs = Admin::deletethietbi($id);
+        if($rs != 0) return redirect()->route(route: 'admin.thietbi');
+        
+
+    }
+    function deletelinhkien($id){
+        $rs = Admin::deletelinhkien($id);
+        if($rs != 0) return redirect()->route(route: 'admin.linkkien');
+        
+
+    }
   
 
     

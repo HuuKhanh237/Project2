@@ -13,6 +13,7 @@
             <th>Name</th>
             <th>Mô tả</th>
             <th>Lab</th>
+            <th>Xóa</th>
         </tr>
     </thead>
     <tbody>
@@ -27,7 +28,7 @@
             {{($item->id_lab==4 ? 'P204' : '')}}
             {{($item->id_lab==5 ? 'P205' : '')}}
             </td>
-
+            <td><a href="{{'xoatb/'.$item->id}}">Xóa</a></td>
         </tr>
         @empty
         <tr class="table-dark">
