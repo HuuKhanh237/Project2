@@ -7,13 +7,13 @@
     <title>@yield('title')</title>
 
     <!-- Google Font: Source Sans Pro -->
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
+    <link rel="stylesheet" href="{{asset('https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback')}}">
     <!-- Font Awesome -->
-    <link rel="stylesheet" href="../../plugins/fontawesome-free/css/all.min.css">
+    <link rel="stylesheet" href="{{asset('../../plugins/fontawesome-free/css/all.min.css')}}">
     <!-- Theme style -->
-    <link rel="stylesheet" href="../../dist/css/adminlte.min.css">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/v/bs5/jszip-2.5.0/dt-1.11.0/af-2.3.7/b-2.0.0/b-colvis-2.0.0/b-html5-2.0.0/b-print-2.0.0/datatables.min.css" />
+    <link rel="stylesheet" href="{{asset('../../dist/css/adminlte.min.css')}}">
+    <link href="{{asset('https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css')}}" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="{{asset('https://cdn.datatables.net/v/bs5/jszip-2.5.0/dt-1.11.0/af-2.3.7/b-2.0.0/b-colvis-2.0.0/b-html5-2.0.0/b-print-2.0.0/datatables.min.css')}}" />
     <style type="text/css">
         body {
             width: 100%;
@@ -101,7 +101,7 @@
                with font-awesome or any other icon font library -->
                <li class="nav-item">
                             <a href="{{url('/admin')}}" class="nav-link">
-                            <i class="fas fa-warehouse"></i>&nbsp;&nbsp;&nbsp;&nbsp;
+                            <i style="font-size: 25px;" class="far fa-address-card"></i>&nbsp;&nbsp;&nbsp;&nbsp;
                                 <p>
                                     Quản lý tài khoản
 
@@ -110,7 +110,7 @@
                         </li>
                         <li class="nav-item">
                             <a href="{{url('/admin/thietbi')}}" class="nav-link">
-                            <i class="fas fa-warehouse"></i>&nbsp;&nbsp;&nbsp;&nbsp;
+                            <i style="font-size: 25px;" class="fas fa-desktop"></i>&nbsp;&nbsp;&nbsp;&nbsp;
                                 <p>
                                     Thiết bị phòng Lab
 
@@ -119,18 +119,27 @@
                         </li>
                         <li class="nav-item">
                             <a href="{{url('/admin/linhkien')}}" class="nav-link">
-                            <i class="fas fa-warehouse"></i>&nbsp;&nbsp;&nbsp;&nbsp;
+                            <i style="font-size: 25px;" class="far fa-hdd"></i>&nbsp;&nbsp;&nbsp;&nbsp;
                                 <p>
-                                    Kho
+                                    Linh kiện kho
 
                                 </p>
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a href="../widgets.html" class="nav-link">
-                            <i class="fas fa-warehouse"></i>&nbsp;&nbsp;&nbsp;&nbsp;
+                            <a href="{{url('/admin/baocaolab')}}" class="nav-link">
+                            <i style="font-size: 25px;" class="far fa-clipboard"></i>&nbsp;&nbsp;&nbsp;&nbsp;
                                 <p>
-                                    Quản lý báo cáo
+                                    Quản lý báo cáo Lab
+
+                                </p>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="{{url('/admin/baocaokho')}}" class="nav-link">
+                            <i style="font-size: 25px;" class="fas fa-clipboard"></i>&nbsp;&nbsp;&nbsp;&nbsp;
+                                <p>
+                                    Quản lý báo cáo Kho
 
                                 </p>
                             </a>
@@ -171,6 +180,26 @@
             <!-- /.content -->
         </div>
         <!-- /.content-wrapper -->
+        <div class="content-wrapper" style="color: black;">
+            <!-- Content Header (Page header) -->
+
+
+            <!-- Main content -->
+            <!-- <section class="content">
+                <div class="container-fluid">
+                    <div class="row">
+                        <div class="col-12">
+                            <!-- Default box -->
+            <!-- 
+                        </div>
+                    </div>
+                </div>
+            </section>  -->
+            
+                @yield('script')
+           
+            <!-- /.content -->
+        </div>
 
         <footer class="main-footer">
 
@@ -187,18 +216,18 @@
     <!-- ./wrapper -->
 
     <!-- jQuery -->
-    <script src="../../plugins/jquery/jquery.min.js"></script>
+    <script src="{{asset('../../plugins/jquery/jquery.min.js')}}"></script>
     <!-- Bootstrap 4 -->
-    <script src="../../plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="{{asset('../../plugins/bootstrap/js/bootstrap.bundle.min.js')}}"></script>
     <!-- AdminLTE App -->
-    <script src="../../dist/js/adminlte.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous"></script>
+    <script src="{{asset('../../dist/js/adminlte.min.js')}}"></script>
+    <script src="{{asset('https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js')}}" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
+<script src="{{asset('https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js')}}" integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous"></script>
     <!-- AdminLTE for demo purposes -->
-    <script src="../../dist/js/demo.js"></script>
-    <script type="text/javascript" src="https://cdn.datatables.net/v/bs5/jszip-2.5.0/dt-1.11.0/af-2.3.7/b-2.0.0/b-colvis-2.0.0/b-html5-2.0.0/b-print-2.0.0/datatables.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.min.js" integrity="sha384-Atwg2Pkwv9vp0ygtn1JAojH0nYbwNJLPhwyoVbhoPwBhjQPR5VtM2+xf0Uwh9KtT" crossorigin="anonymous"></script>
+    <script src="{{asset('../../dist/js/demo.js')}}"></script>
+    <script type="text/javascript" src="{{asset('https://cdn.datatables.net/v/bs5/jszip-2.5.0/dt-1.11.0/af-2.3.7/b-2.0.0/b-colvis-2.0.0/b-html5-2.0.0/b-print-2.0.0/datatables.min.js')}}"></script>
+  <script src="{{asset('https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js')}}" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
+  <script src="{{asset('https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.min.js')}}" integrity="sha384-Atwg2Pkwv9vp0ygtn1JAojH0nYbwNJLPhwyoVbhoPwBhjQPR5VtM2+xf0Uwh9KtT" crossorigin="anonymous"></script>
   <script>$(document).ready( function () {
     $('#home').DataTable( {
         dom: 'Bfrtip',

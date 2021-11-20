@@ -24,7 +24,7 @@ class CreateThietbiTable extends Migration
             $table->foreign('id_lab')
             ->references('id')
             ->on('lab');
-            // ->onDelete('cascade');
+            
            
             $table->timestamps();
         });

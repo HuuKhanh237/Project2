@@ -19,8 +19,9 @@
             </label>
         </div> -->
         <div class="form-floating">
-            <textarea name="mota" class="form-control" placeholder="Leave a comment here" id="floatingTextarea2" style="border-radius: 10px;height: 150px" required></textarea>
-            <label for="floatingTextarea2">Chi tiết</label>
+            <span>Chi tiết</span>
+            <textarea name="mota" class="form-control" placeholder="Leave a comment here" id="ckeditor" style="border-radius: 10px;height: 150px" required></textarea>
+            
         </div><br>
         <!-- <div class="form-floating">
             <textarea name="tinhtrang2" class="form-control" type="date" placeholder="Leave a comment here" id="floatingTextarea3" style="border-radius: 10px;height: 150px"></textarea>

@@ -13,14 +13,16 @@
             <th>Name</th>
             <th>Mô tả</th>
             <th>Lab</th>
-            <th>Xóa</th>
+            <!-- <th>Xóa</th> -->
         </tr>
     </thead>
     <tbody>
         @forelse ($thietbi as $item)   
         <tr>
             <td>{{ $item->id}}</td>
-            <td>{{ $item->name}}</td>
+            <td><p>{{$item->name}}</p>
+            <img src="{{asset($item->image)}}" width="250px">
+            </td>
             <td>{{ $item->mota}}</td>
             <td>{{($item->id_lab==1 ? 'P201' : '')}}
             {{($item->id_lab==2 ? 'P202' : '')}}
@@ -28,7 +30,7 @@
             {{($item->id_lab==4 ? 'P204' : '')}}
             {{($item->id_lab==5 ? 'P205' : '')}}
             </td>
-            <td><a href="{{'xoatb/'.$item->id}}">Xóa</a></td>
+            <!-- <td><a href="{{'xoatb/'.$item->id}}">Xóa</a></td> -->
         </tr>
         @empty
         <tr class="table-dark">

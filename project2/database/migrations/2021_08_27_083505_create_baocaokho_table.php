@@ -18,11 +18,11 @@ class CreateBaocaokhoTable extends Migration
             $table->dateTime('ngaygio', $precision = 0);
             $table->string('noidung',550);
             $table->tinyInteger('trangthai');
-            $table->bigInteger('id_kho')->unsigned();
+            // $table->bigInteger('id_kho')->unsigned();
             $table->bigInteger('id_users')->unsigned();
-            $table->foreign('id_kho')
-            ->references('id')
-            ->on('kho');
+            // $table->foreign('id_kho')
+            // ->references('id')
+            // ->on('kho');
             $table->foreign('id_users')
             ->references('id')
             ->on('users');

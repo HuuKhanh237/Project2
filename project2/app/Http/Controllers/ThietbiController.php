@@ -131,12 +131,12 @@ class ThietbiController extends Controller
         }
     }
 
-    function deletethietbi($id){
-        $rs = ThietbiModel::deletethietbi($id);
-        if($rs != 0) return redirect()->route(route: 'P201');
+    // function deletethietbi($id){
+    //     $rs = ThietbiModel::deletethietbi($id);
+    //     if($rs != 0) return redirect()->route(route: 'P201');
         
 
-    }
+    // }
     // function suatb(Request $request,$id){
     //     $data = array();
         

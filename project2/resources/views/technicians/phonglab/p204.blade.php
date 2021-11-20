@@ -2,40 +2,51 @@
 @section('title','Phòng 204')
 @section('content')
    <h1 style="text-align: center;">Phòng 204</h1>
-   <table id="home" class="table table-bordered" style="text-align: center;"> 
+   <table id="home" class="table table-bordered" style="text-align: center;">
 
    @if(Session('success'))<div class="alert alert-success">{{Session::get('success')}}</div>@endif
 		@if(Session('error'))<div class="alert alert-success">{{Session::get('error')}}</div>@endif
 <thead>
     
     <tr class="table-dark">
-    <th style="width :90px">Mã thiết bị</th>
-        <th style="width :90px">Tình trạng</th>
+        <th style="width :90px">Mã thiết bị</th>
+        <th style="width :400px">Tình trạng</th>
         <th>Mô tả</th>
-        <th style="width :150px">Hành Động</th>
+        <th style="width :150px">Sửa</th>
         <th style="width :90px">Báo cáo</th>
     </tr>
 </thead>
-<tbody>
+<tbody style="text-align: center" >
     @forelse ($P204 as $item)
-    <tr>
+    <tr >
        
         <td>
-            <p> {{ $item->name}}
-            <img src="{{$item->image}}" width="250px">
-            </p>
-            
-        </td>
-        <td>{{ $item->tinhtrang1==1?'Tốt':'Hỏng'}}</td>
-        <td>{{ $item->mota}}</td>
+            <p> {{ $item->name}}</p>
+            <img src="{{$item->image}}" width="250px">   
+        </td>       
         <td>
-            <a href="{{'/suatb/'.$item->id}}">Sửa</a>
-            <a href="{{'/xoatb/'.$item->id}}">Xóa</a>
+            <!-- {{ $item->tinhtrang1==1?'Tốt':'Hỏng'}} -->
+            @if($item->tinhtrang1==1) <h4>Tốt</h4>
+            @elseif($item->tinhtrang1==0) <h4 style="color: red;">Hỏng</h4>
+            {{$item->tinhtrang2}}
+            @endif
+        </td>
+        <td>{{ $item->mota}}
+        </td>
+        <td>
+        <a href="{{'suatb/'.$item->id}}"><span style="font-size: 40px;" class="iconify" data-icon="icon-park:edit-two"></span></a>
+           
+            <!-- <a href="{{'xoatb/'.$item->id}}">Xóa</a> -->
+        </td>
+        <td>
+        <a class="add_to_cart" href="{{'cart/addlab/'.$item->id}}"><span style="font-size: 40px;"  class="iconify" data-icon="icon-park:report"></span></a>
+           
+            
         </td>
     </tr>
     @empty
     <tr class="table-dark">
-        <th colspan="4">Danh sách trống</th>
+        <th colspan="5" class="text-center">Danh sách trống</th>
     </tr>
     @endforelse
 </tbody>

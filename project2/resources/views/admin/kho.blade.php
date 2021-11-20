@@ -1,5 +1,5 @@
 @extends('admin.layouts.master')
-@section('title','Linh kiện')
+@section('title','Kho')
 @section('content')
 
 
@@ -14,7 +14,7 @@
             <th>Mô tả</th>
             <th>Số lượng</th>
             <th>Kho</th>
-            <th>Xóa</th>
+            <!-- <th>Xóa</th> -->
         </tr>
     </thead>
     <tbody>
@@ -23,12 +23,13 @@
             <td>{{ $item->id}}</td>
             <td>
                 <p> {{ $item->name}}</p>
-                <img src="{{asset('storage/'. $item->image)}}" width="150px">
+                <img src="{{asset($item->image)}}" width="250px">
+                
             </td>
             <td>{{ $item->mota}}</td>
             <td>{{ $item->soluong}}</td>
             <td>{{ $item->id_kho==1?'Kho tầng 3':'Kho tầng 5'}}</td>
-            <td><a href="{{'xoalk/'.$item->id}}">Xóa</a></td>                                                                            
+            <!-- <td><a href="{{'xoalk/'.$item->id}}">Xóa</a></td>                                                                             -->
         </tr>
         @empty
         <tr class="table-dark">

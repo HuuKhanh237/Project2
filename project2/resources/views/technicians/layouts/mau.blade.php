@@ -46,16 +46,16 @@
 
       <li>
         <div class="iocn-link">
-          
+
           <a href="">
-          <span style="font-size: 30px; margin-left: 18px ;" class="iconify" data-icon="flat-ui:pc" data-rotate="180deg" data-flip="horizontal,vertical"></span>
-          
+            <span style="font-size: 30px; margin-left: 18px ;" class="iconify" data-icon="flat-ui:pc" data-rotate="180deg" data-flip="horizontal,vertical"></span>
+
           </a>
-          
+
           <i class='bx bxs-chevron-down arrow'></i>
         </div>
         <ul class="sub-menu">
-          <li><a class="link_name" >Phòng Lab</a></li>
+          <li><a class="link_name">Phòng Lab</a></li>
           <li><a href="{{url('themtb')}}">Thêm thiết bị phòng Lab</a></li>
           <li><a href="{{url('P201')}}">P201</a></li>
           <li><a href="{{url('P202')}}">P202</a></li>
@@ -68,7 +68,7 @@
       <li>
         <div class="iocn-link">
           <a href="">
-          <span style="font-size: 35px; margin-left: 20px ;" class="iconify" data-icon="icon-park:cpu" data-rotate="180deg" data-flip="horizontal,vertical"></span>
+            <span style="font-size: 35px; margin-left: 20px ;" class="iconify" data-icon="icon-park:cpu" data-rotate="180deg" data-flip="horizontal,vertical"></span>
           </a>
           <i class='bx bxs-chevron-down arrow'></i>
         </div>
@@ -83,15 +83,31 @@
       <li>
         <div class="iocn-link">
           <a href="">
-          <span style="font-size: 35px; margin-left: 20px ;"  class="iconify" data-icon="icon-park:table-report" data-rotate="180deg" data-flip="horizontal,vertical"></span>
+            <span style="font-size: 35px; margin-left: 20px ;" class="iconify" data-icon="icon-park:table-report" data-rotate="180deg" data-flip="horizontal,vertical"></span>
           </a>
           <i class='bx bxs-chevron-down arrow'></i>
         </div>
         <ul class="sub-menu">
           <li><a class="link_name" href="#">Báo cáo</a></li>
-          <li><a href="{{url('')}}">Thêm linh kiện</a></li>
-          <li><a href="{{url('')}}">Báo cáo phòng lab</a></li>
-          <li><a href="{{url('')}}">Báo cáo kho</a></li>
+          <!-- <li><a href="{{url('')}}">Thêm linh kiện</a></li> -->
+          <li><a href="{{url('cart/addlabbc')}}">Báo cáo phòng lab</a></li>
+          <li><a href="{{url('cart1/addlabk')}}">Báo cáo kho</a></li>
+
+        </ul>
+      </li>
+      <br>
+      <li>
+        <div class="iocn-link">
+          <a href="">
+          <span  style="font-size: 35px; margin-left: 20px ;" class="iconify" data-icon="icon-park:notes"></span>
+          </a>
+          <i class='bx bxs-chevron-down arrow'></i>
+        </div>
+        <ul class="sub-menu">
+          <li><a class="link_name" href="#">Nội dung báo cáo</a></li>
+          <!-- <li><a href="{{url('')}}">Thêm linh kiện</a></li> -->
+          <li><a href="{{url('/baocaolab')}}">Báo cáo phòng lab </a></li>
+          <li><a href="{{url('/baocaokho')}}">Báo cáo kho</a></li>
 
         </ul>
       </li>
@@ -158,7 +174,7 @@
       <br>
       <li>
         <a href="{{route('logout')}}">
-        <span style="font-size: 30px; margin-left: 20px;" class="iconify" data-icon="ri:logout-circle-line" data-rotate="180deg" data-flip="horizontal,vertical"></span>
+          <span style="font-size: 30px; margin-left: 20px;" class="iconify" data-icon="ri:logout-circle-line" data-rotate="180deg" data-flip="horizontal,vertical"></span>
         </a>
         <ul class="sub-menu blank">
           <li><a class="link_name" href="#">Logout</a></li>
@@ -185,7 +201,7 @@
       <!-- <footer class="container" style="position: absolute;bottom:0"> -->
       <!-- Footer -->
       @yield('footer')
-<!-- Footer -->
+      <!-- Footer -->
       <!-- </footer> -->
       <!-- @show -->
     </div>
@@ -208,7 +224,7 @@
   </script>
 
 
-
+  
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
   <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.36/pdfmake.min.js"></script>
   <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.36/vfs_fonts.js"></script>
@@ -225,6 +241,17 @@
         ]
       });
     });
+  </script>
+  <script src="{{asset('text/ckeditor/ckeditor.js')}}"></script>
+  <script>
+    CKEDITOR.replace('ckeditor');
+    CKEDITOR.replace('ckeditor1');
+    CKEDITOR.replace('ckeditor2');
+    CKEDITOR.replace('ckeditor3');
+    CKEDITOR.replace('ckeditor4');
+    CKEDITOR.replace('ckeditor5');
+    CKEDITOR.replace('ckeditor6');
+    CKEDITOR.replace('ckeditor7');
   </script>
 </body>
 

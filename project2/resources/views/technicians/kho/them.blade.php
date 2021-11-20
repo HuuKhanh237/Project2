@@ -14,8 +14,9 @@
             <input style=" border-radius: 10px; width: 600px;  height: 50px;" type="text" name="name" placeholder="Nhập tên linh kiện" required>
         </div>
         <div class="form-floating">
-            <textarea name="mota" class="form-control" placeholder="Leave a comment here" id="floatingTextarea2" style="border-radius: 10px;height: 150px" required></textarea>
-            <label for="floatingTextarea2">Chi tiết</label>
+            <span>Chi tiết</span>
+            <textarea name="mota" class="form-control" placeholder="Leave a comment here" id="ckeditor4" style="border-radius: 10px;height: 150px" id="ckeditor4" required></textarea>
+            
         </div><br>
         <div class="input-group mb-3">
             <input style=" border-radius: 10px;  height: 50px;" type="number" name="soluong" placeholder="Nhập số lượng" required>

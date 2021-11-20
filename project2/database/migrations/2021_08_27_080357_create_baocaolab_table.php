@@ -18,11 +18,11 @@ class CreateBaocaolabTable extends Migration
             $table->dateTime('ngaygio', $precision = 0);
             $table->string('noidung',550);
             $table->tinyInteger('trangthai');
-            $table->bigInteger('id_lab')->unsigned();
+            // $table->bigInteger('id_lab')->unsigned();
             $table->bigInteger('id_users')->unsigned();
-            $table->foreign('id_lab')
-            ->references('id')
-            ->on('lab');
+            // $table->foreign('id_lab')
+            // ->references('id')
+            // ->on('lab');
             $table->foreign('id_users')
             ->references('id')
             ->on('users');

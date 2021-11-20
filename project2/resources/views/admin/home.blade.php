@@ -8,7 +8,7 @@
 @if(Session('error'))<div class="alert alert-success">{{Session::get('error')}}</div>@endif</div>
 
 <table id="home" class="table">
-    <div style="color: black;"><a href="{{url('/admin/register')}}" class="nav-link">Thêm tài khoản</div>
+    <div style="color: black;"><a href="{{url('/admin/register')}}" class="nav-link"><i style="font-size: 25px; color:black" class="far fa-id-badge">Thêm tài khoản</i></div>
     <thead>
 
         <tr class="table-dark">
@@ -26,7 +26,7 @@
             <td>{{ $item->name}}</td>
             <td>{{ $item->email}}</td>
             <td>{{ $item->is_active==1?'Hoạt động' : 'Khóa' }}</td>
-            <td><a href="{{url('/admin/sua/'.$item->id)}}">Sửa</a></td>
+            <td><a href="{{url('/admin/sua/'.$item->id)}}"><i style="font-size: 30px; color: black;" class="far fa-edit"></i></a></td>
             
            
         </tr>

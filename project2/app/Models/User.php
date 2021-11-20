@@ -42,6 +42,20 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+    public $table='users';
+    static function users($id){
+        
+        return DB::table('users')->where([
+            'id'=>$id
+        ])
+        ->select('name','email')
+        ->get();
+    }
+    static function userss(){
+        $sql = "SELECT * FROM users where id=".session('userId');
+       $result=DB::select($sql);
+       return $result;
+    }
     static function P201(){
         $sql = "SELECT * FROM thietbi WHERE id_lab=1";
        $result=DB::select($sql);

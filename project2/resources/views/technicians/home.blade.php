@@ -131,14 +131,16 @@
           <h4 class="text-uppercase fw-bold mb-4">
           <span style="font-size: 40px;" class="iconify" data-icon="flat-color-icons:business-contact" data-rotate="180deg" data-flip="horizontal,vertical"></span> Liên hệ quản lý
           </h4>
-          
-          <p style="margin-left: 5px;">
-          <span class="iconify" data-icon="logos:google-gmail" data-rotate="180deg" data-flip="horizontal,vertical"></span> : vuongkhanh40@gmail.com 
-          </p>
+          <p><span  style="font-size: 30px;" class="iconify" data-icon="icon-park:avatar"></span>: Vương Hữu Khánh</p>
           <p style="margin-left: 5px;">
           <span class="iconify" data-icon="logos:google-gmail" data-rotate="180deg" data-flip="horizontal,vertical"></span> : vuongkhanh40@gmail.com 
           </p>
           <p><span style="font-size: 30px;" class="iconify" data-icon="emojione:mobile-phone" data-rotate="180deg" data-flip="horizontal,vertical"></span>:0981025274</p>
+          <p><span  style="font-size: 30px;" class="iconify" data-icon="icon-park:avatar"></span> :Hoàng Tuấn Anh</p>
+          <p style="margin-left: 5px;">
+          <span class="iconify" data-icon="logos:google-gmail" data-rotate="180deg" data-flip="horizontal,vertical"></span> : tuananhhoanga4151001@gmail.com
+          </p>
+          
           <p><span style="font-size: 30px;" class="iconify" data-icon="emojione:mobile-phone" data-rotate="180deg" data-flip="horizontal,vertical"></span>:0981025274</p>
         </div>
         <!-- Grid column -->

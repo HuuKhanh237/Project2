@@ -12,7 +12,7 @@
         <th style="width :90px">Mã thiết bị</th>
         <th style="width :400px">Tình trạng</th>
         <th>Mô tả</th>
-        <th style="width :150px">Hành Động</th>
+        <th style="width :150px">Sửa</th>
         <th style="width :90px">Báo cáo</th>
     </tr>
 </thead>
@@ -34,12 +34,12 @@
         <td>{{ $item->mota}}
         </td>
         <td>
-        <a href="{{'suatb/'.$item->id}}"><button type="button" class="btn btn-outline-dark">Sửa</button></a>
+        <a href="{{'suatb/'.$item->id}}"><span style="font-size: 40px;" class="iconify" data-icon="icon-park:edit-two"></span></a>
            
-            <a href="{{'xoatb/'.$item->id}}">Xóa</a>
+            <!-- <a href="{{'xoatb/'.$item->id}}">Xóa</a> -->
         </td>
         <td>
-        <a href=""><button type="button" class="btn btn-outline-dark">Báo cáo</button></a>
+        <a class="add_to_cart" href="{{'cart/addlab/'.$item->id}}"><span style="font-size: 40px;"  class="iconify" data-icon="icon-park:report"></span></a>
            
             
         </td>

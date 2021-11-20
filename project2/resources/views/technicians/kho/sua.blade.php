@@ -38,8 +38,9 @@
 
        
         <div class="form-floating">
-            <textarea name="mota" class="form-control" placeholder="" id="floatingTextarea2" style="border-radius: 10px;height: 150px" value="">{{ $item->mota}}</textarea>
-            <label for="floatingTextarea2">Mô tả</label>
+            <div>Mô tả</div>
+            <textarea name="mota" class="form-control" placeholder="" id="ckeditor3" style="border-radius: 10px;height: 150px" value="">{{ $item->mota}}</textarea>
+            
         </div><br>
         <div class="input-group mb-3">
             <input style=" border-radius: 10px;  height: 50px; width: 50px;" type="number" name="soluong" placeholder="" value="{{ $item->soluong}}" required>

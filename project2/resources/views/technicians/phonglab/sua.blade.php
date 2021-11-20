@@ -37,19 +37,21 @@
 				</option>
 			</select>
 		</div><br>
-		<div class="form-group">
-			<label for="sodienthoai">Lỗi</label>
-			<input type="text" class="form-control" id="tinhtrang2" style="border-radius: 10px;height: 70px" name="tinhtrang2" placeholder="Tình Trạng 2" maxlength="255" value="{{$item->tinhtrang2}}" required />
-		</div>
+		<div class="form-floating">
+			<span>Lỗi</span>
+			<textarea name="tinhtrang2" class="form-control" placeholder="" id="ckeditor2" style="border-radius: 10px;height: 150px" value="{{$item->tinhtrang2}}">{{$item->tinhtrang2}}</textarea>
+			
+		</div><br>
 		<!-- <div class="form-floating">
-	<textarea name="mota" class="form-control" placeholder="" id="floatingTextarea2" style="border-radius: 10px;height: 150px" value="{{$item->tinhtrang2}}"></textarea>
+	<textarea name="mota" class="form-control" placeholder="" id="floatingTextarea2" style="border-radius: 10px;height: 150px" value="{{$item->tinhtrang2}}">{{$item->tinhtrang2}}</textarea>
 	<label for="floatingTextarea2">Báo lỗi</label>
 </div> -->
 
 		<br>
 		<div class="form-floating">
-			<textarea name="mota" class="form-control" placeholder="" id="floatingTextarea2" style="border-radius: 10px;height: 150px" value="">{{ $item->mota}}</textarea>
-			<label for="floatingTextarea2">Mô tả</label>
+			<span>Mô tả</span>
+			<textarea name="mota" style="resize:none" class="form-control" placeholder="" id="ckeditor1" style="border-radius: 10px;height: 150px" value="{{$item->mota}}">{{$item->mota}}</textarea>
+			
 		</div><br>
 		<div class="col-md-4">
 			<label for="validationDefault01" class="form-label">Image</label>

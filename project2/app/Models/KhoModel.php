@@ -9,6 +9,7 @@ use Illuminate\Support\Facades\DB;
 class KhoModel extends Model
 {
     use HasFactory;
+    public $table='linhkien';
     static function idkho(){
         $sql = "SELECT * FROM kho";
        $result=DB::select($sql);
@@ -51,11 +52,11 @@ class KhoModel extends Model
             'image'=>$path
         ]);
     }
-    static function deletelinhkien($id){
-        $sql = "DELETE FROM linhkien WHERE id='$id'";
-        $rs = DB::delete($sql);
-        return $rs;
+    // static function deletelinhkien($id){
+    //     $sql = "DELETE FROM linhkien WHERE id='$id'";
+    //     $rs = DB::delete($sql);
+    //     return $rs;
 
-    }
+    // }
     
 }

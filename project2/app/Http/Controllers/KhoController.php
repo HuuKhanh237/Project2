@@ -47,12 +47,12 @@ class KhoController extends Controller
             return redirect()->route(route:'themlk')->with('success','Thêm thành công');
         }
     }
-    function deletelinhkien($id){
-        $rs = KhoModel::deletelinhkien($id);
-        if($rs != 0) return redirect()->route(route: 'Khot3');
+    // function deletelinhkien($id){
+    //     $rs = KhoModel::deletelinhkien($id);
+    //     if($rs != 0) return redirect()->route(route: 'Khot3');
         
 
-    }
+    // }
     function sualinhkien($id)
     {
 
