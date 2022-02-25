@@ -2,33 +2,29 @@
 @section('title','Kho tầng 3')
 @section('content')
 <h1 style="text-align: center;">Kho Tầng 3</h1>
-<table id="home" class="table table-bordered" style="text-align: center;">
+<table id="home" class="table table-bordered" style="text-align: center; width: 100%;">
 
     <thead>
 
         <tr class="table-dark">
 
-            <th>Tên linh kiện</th>
-            <th>Tình trạng</th>
-            <th>Mô tả</th>
-            <th>Số lượng</th>
-            <th>Sửa</th>
-            <th>Báo cáo</th>
+            <th style="width: 10%">Tên linh kiện</th>
+            <th style="width: 10%">Tình trạng</th>
+            <th style="width: 50%">Mô tả</th>
+            <th style="width: 10%">Số lượng</th>
+            <th style="width: 10%">Sửa</th>
+            <th style="width: 10%">Báo cáo</th>
         </tr>
     </thead>
     <tbody>
         @forelse ($Khot3 as $item)
         <tr>
-
-            <td>
-                <p> {{ $item->name}}
-
-                </p>
-                <img src="{{$item->image}}" width="250px">
-
-            </td>
+        <td>
+            <p> {{ $item->name}}</p>
+            <img src="{{$item->image}}" width="250px">   
+        </td>      
             <td>{{ $item->tinhtrang1==1?'Tốt':'Hỏng'}}</td>
-            <td>{{ $item->mota}}</td>
+            <td>{!!$item->mota!!}</td>
             <td>{{ $item->soluong}}</td>
             <td>
                 <a href="{{'sualk/'.$item->id}}"><span style="font-size: 40px;" class="iconify" data-icon="icon-park:edit-two"></span></a>

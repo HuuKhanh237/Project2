@@ -21,7 +21,6 @@
         <div class="form-floating">
             <span>Chi tiết</span>
             <textarea name="mota" class="form-control" placeholder="Leave a comment here" id="ckeditor" style="border-radius: 10px;height: 150px" required></textarea>
-            
         </div><br>
         <!-- <div class="form-floating">
             <textarea name="tinhtrang2" class="form-control" type="date" placeholder="Leave a comment here" id="floatingTextarea3" style="border-radius: 10px;height: 150px"></textarea>
@@ -39,7 +38,7 @@
             <input name="image" type="file" class="form-control" id="validationDefault01"  required>
         </div>
         <br>
-        <button type="submit" class="btn btn-outline-dark" style="width: 300px; margin-left: 150px;">Thêm</button>
+        <button type="submit" class="btn btn-outline-dark" style="width: 300px; margin-left: 150px; margin-top: 50px; margin-bottom: 50px">Thêm</button>
 
     </form>
 </div>

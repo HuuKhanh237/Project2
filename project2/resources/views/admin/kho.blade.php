@@ -26,7 +26,7 @@
                 <img src="{{asset($item->image)}}" width="250px">
                 
             </td>
-            <td>{{ $item->mota}}</td>
+            <td>{!!$item->mota!!}</td>
             <td>{{ $item->soluong}}</td>
             <td>{{ $item->id_kho==1?'Kho tầng 3':'Kho tầng 5'}}</td>
             <!-- <td><a href="{{'xoalk/'.$item->id}}">Xóa</a></td>                                                                             -->

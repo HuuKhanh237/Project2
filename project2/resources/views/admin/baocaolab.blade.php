@@ -23,11 +23,11 @@
       <td>{{ $item->id}}</td>
       <td>{{ $item->ngaygio}}</td>
       <td>
-        <p>{{$item->noidung}}</p>
+        <p>{!!$item->noidung!!}</p>
       </td>
       <td>
         @if($item->trangthai==0) 
-        <a href="/admin/baocaolab/duyet/{{$item->id}}" class="label label-default"><button type="button" class="btn btn-danger">Chưa duyệt</button></a>
+        <a href="/admin/baocaolab/duyet/{{$item->id}}" class="label label-default"><button type="button" class="btn btn-danger">Duyệt</button></a>
         @else
         <span style="color: green;">Đã duyệt</span>
         @endif

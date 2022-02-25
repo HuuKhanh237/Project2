@@ -23,7 +23,7 @@
             <td><p>{{$item->name}}</p>
             <img src="{{asset($item->image)}}" width="250px">
             </td>
-            <td>{{ $item->mota}}</td>
+            <td>{!!$item->mota!!}</td>
             <td>{{($item->id_lab==1 ? 'P201' : '')}}
             {{($item->id_lab==2 ? 'P202' : '')}}
             {{($item->id_lab==3 ? 'P203' : '')}}

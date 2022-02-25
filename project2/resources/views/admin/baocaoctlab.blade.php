@@ -27,7 +27,7 @@
             </td>
             
             <td>
-                {{$item->tinhtrang2}}
+                {!!$item->tinhtrang2!!}
             </td>
             <td>
                 {{$item->id_lab==1?'P201':''}}

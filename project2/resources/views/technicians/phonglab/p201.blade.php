@@ -28,10 +28,10 @@
             <!-- {{ $item->tinhtrang1==1?'Tốt':'Hỏng'}} -->
             @if($item->tinhtrang1==1) <h4>Tốt</h4>
             @elseif($item->tinhtrang1==0) <h4 style="color: red;">Hỏng</h4>
-            {{$item->tinhtrang2}}
+            {!!$item->tinhtrang2!!}
             @endif
         </td>
-        <td>{{ $item->mota}}
+        <td>{!!$item->mota!!}
         </td>
         <td>
         <a href="{{'suatb/'.$item->id}}"><span style="font-size: 40px;" class="iconify" data-icon="icon-park:edit-two"></span></a>
@@ -51,4 +51,5 @@
     @endforelse
 </tbody>
 </table>
+<script src="https://cdn.ckeditor.com/ckeditor5/31.0.0/classic/ckeditor.js"></script>
 @endsection

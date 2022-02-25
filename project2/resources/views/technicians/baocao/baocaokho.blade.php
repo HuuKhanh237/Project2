@@ -23,7 +23,7 @@
       <td>{{ $item->id}}</td>
       <td>{{ $item->ngaygio}}</td>
       <td>
-        <p>{{$item->noidung}}</p>
+        <p>{!!$item->noidung!!}</p>
       </td>
       <td>
         @if($item->trangthai==0) 

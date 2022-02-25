@@ -53,7 +53,7 @@ $content = Cart::content();
                             </div>
                             <div class="col-sm-6 col-xs-6">
                                 <div class="col-xs-12">{{$item->name}}</div>
-                                <div class="col-xs-12">{{$item->options->tinhtrang2}}</div>
+                                <div class="col-xs-12">{!!$item->options->tinhtrang2!!}</div>
                             </div>
                             <div class="col-sm-3 col-xs-3 text-right">
                                 {{($item->options->id_lab==1 ? 'P201' : '')}}
@@ -111,7 +111,9 @@ $content = Cart::content();
                 <!--SHIPPING METHOD END-->
                 <!--CREDIT CART PAYMENT-->
                 </from>
-
+                @if(Session::has('error'))
+                <h3 style="color: red; text-align: center;">{{Session::get('error')}}</h3>
+                @endif
             </div>
             <script src="//netdna.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
             <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>

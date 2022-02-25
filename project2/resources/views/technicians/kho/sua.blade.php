@@ -51,7 +51,7 @@
             <img id="avatar" width="200px" src="{{asset($item->image)}}">
         </div>
         @endforeach
-        <center><button style="height: 40px ; width: 300px;" type="submit" class="btn btn-dark">Sửa lại</button></center>
+        <center><button style="height: 40px ; width: 300px ;margin-top: 50px; margin-bottom: 50px;" type="submit" class="btn btn-dark">Sửa lại</button></center>
     </form>
 </div>
 @endsection

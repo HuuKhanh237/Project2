@@ -85,7 +85,7 @@ class BaocaoLabController extends Controller
             }
         }
         \Cart::destroy();
-        return redirect('/home');
+        return redirect('/home')->with('error', 'Chưa có nội dung báo cáo');
     }
     public function users($id)
     {

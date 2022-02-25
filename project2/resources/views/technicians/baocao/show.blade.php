@@ -12,14 +12,16 @@ $content=Cart::content();
 // echo'</pre>';
 ?>
    <h1 style="text-align: center;">Báo cáo phòng Lab</h1>
+   <div style="float: right; margin-bottom: 0px;">
    @foreach($users as $item)
-   <a style="float: right;" href="{{asset('/baocao/check/'.$item->id)}}"><button type="button" class="btn btn-warning">Báo cáo</button></a>
+   <a  href="{{asset('/baocao/check/'.$item->id)}}"><button type="button" class="btn btn-warning">Báo cáo</button></a>
    @endforeach
-   <a style="float: right;" href="{{asset('/cart/xoa/all')}}"><button type="button" class="btn btn-danger">Xóa tất cả</button></a>;
-  <form class="from-horizontal" method="post">
+   &nbsp; &nbsp<a  href="{{asset('/cart/xoa/all')}}"><button type="button" class="btn btn-danger">Xóa tất cả</button></a>
+   &nbsp; &nbsp</div>
+   <form class="from-horizontal" method="post">
       @csrf
   
-   <table id="home" class="table table-bordered" style="text-align: center;">
+   <table id="home" class="table table-bordered" style="text-align: center">
 
    <!-- @if(Session('success'))<div class="alert alert-success">{{Session::get('success')}}</div>@endif
 		@if(Session('error'))<div class="alert alert-success">{{Session::get('error')}}</div>@endif -->
@@ -44,7 +46,7 @@ $content=Cart::content();
                     <img id="avatar" width="200px" src="{{asset($item->options->image)}}">
                 </td>       
                 <td>      
-                    {{$item->options->tinhtrang2}}    
+                    {!!$item->options->tinhtrang2!!}    
                 </td>
                 <td>      
                     {{($item->options->id_lab==1 ? 'P201' : '')}}    

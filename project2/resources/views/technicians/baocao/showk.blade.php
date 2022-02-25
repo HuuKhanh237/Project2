@@ -11,11 +11,14 @@ use Gloudemans\Shoppingcart\Facades\Cart;
 // print_r($content);
 // echo'</pre>';
 ?>
+
    <h1 style="text-align: center;">Báo cáo Kho</h1>
+   <div style="float: right; margin-bottom: 0px;">
    @foreach($users as $item)
-   <a style="float: right;" href="{{asset('/baocaok/check/'.$item->id)}}"><button type="button" class="btn btn-warning">Báo cáo</button></a>
-   @endforeach
-   <a style="float: right;" href="{{asset('/cart1/xoak/all')}}"><button type="button" class="btn btn-danger">Xóa tất cả</button></a>
+   <a style="" href="{{asset('/baocaok/check/'.$item->id)}}"><button type="button" class="btn btn-warning">Báo cáo</button></a>
+   @endforeach&nbsp; &nbsp
+   <a style="" href="{{asset('/cart1/xoak/all')}}"><button type="button" class="btn btn-danger">Xóa tất cả</button></a> &nbsp; &nbsp
+</div>
   <form class="from-horizontal" method="post">
       @csrf
   

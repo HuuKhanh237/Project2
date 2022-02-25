@@ -28,7 +28,7 @@
 
             </td>
             <td>{{ $item->tinhtrang1==1?'Tốt':'Hỏng'}}</td>
-            <td>{{ $item->mota}}</td>
+            <td>{!!$item->mota!!}</td>
             <td>{{ $item->soluong}}</td>
             <td>
                 <a href="{{'sualk/'.$item->id}}"><span style="font-size: 40px;" class="iconify" data-icon="icon-park:edit-two"></span></a>
